@@ -23,15 +23,12 @@
 					<a href="{{ url('/about') }}">О нас</a>
 					<a href="{{ url('/faq') }}">FAQ</a>
 				</nav>
-				<div class="email-header">
-					<a href="mailto:zakaz@myflowers.ru">zakaz@myflowers.ru</a>
-					<span>Доставка 24/7 по договоренности с оператором</span>
-				</div>
 				<div class="socials-header">
+					<a href="https://vk.com/_our_flowers"><img src="{{ asset('img/header/socials/vk.png') }}" alt="vk" target="_blank"></a>
 					<a href="https://wa.me/8xxxxxxxxxx"><img src="{{ asset('img/header/socials/whatsapp.png') }}" alt="whatsapp" target="_blank"></a>
-                    <a href="https://vk.com/_our_flowers"><img src="{{ asset('img/header/socials/vk.png') }}" alt="vk" target="_blank"></a>
+					<a href="https://telegram.me/_our_flowers"><img src="{{ asset('img/header/socials/telegram.png') }}" alt="tg" target="_blank"></a>
 				</div>
-				<div class="cart-icon"><img src="img/header/cart.png" alt="cart">(3)</div>
+				<div class="cart-icon"><img src="{{ asset ('img/header/cart.png') }}" alt="cart">(3)</div>
 			</div>
 			<div class="container mobile-header">
 				<div class="mobile-menu">
@@ -39,8 +36,8 @@
 					<div class="menu-item"></div>
 					<div class="menu-item"></div>
 				</div>
-				<div class="logo-header"><a href="{{ url('/') }}"><img src="img/header/logo.png" alt="logo">Our Flowers</a></div>
-				<div class="cart-icon"><img src="img/header/cart.png" alt="cart">(3)</div>
+				<div class="logo-header"><a href="{{ url('/') }}"><img src="{{ asset('img/header/logo.png') }}" alt="logo">Our Flowers</a></div>
+				<div class="cart-icon"><img src="{{ asset ('img/header/cart.png') }}" alt="cart">(3)</div>
 				<div class="mobile-menu-burger hide">
 					<div class="burger-wrapper">
 						<div class="burger-links">
@@ -67,8 +64,9 @@
 								<span class="add-info">прием звонков круглосуточно</span>
 							</div>
 							<div class="burger-socials">
-								<a href="https://wa.me/8xxxxxxxxxx"><img src="{{ asset('img/header/socials/whatsapp.png') }}" alt="whatsapp" target="_blank"></a>
 								<a href="https://vk.com/_our_flowers"><img src="{{ asset('img/header/socials/vk.png') }}" alt="vk" target="_blank"></a>
+								<a href="https://wa.me/8xxxxxxxxxx"><img src="{{ asset('img/header/socials/whatsapp.png') }}" alt="whatsapp" target="_blank"></a>
+								<a href="https://telegram.me/_our_flowers"><img src="{{ asset('img/header/socials/telegram.png') }}" alt="tg" target="_blank"></a>
 							</div>
 						</div>
 					</div>
@@ -78,7 +76,7 @@
 				<div class="cart-container">
 					<div class="cart-head">
 						<h3>ваша корзина</h3>
-						<div class="close-cart"><img src="img/header/cart/close.png" alt="close"></div>
+						<div class="close-cart"><img src="{{ asset('img/header/cart/close.png') }}" alt="close"></div>
 					</div>
 					<div class="cart-contents">
 						<div class="cart-item">
@@ -136,7 +134,7 @@
 					<div class="cart-checkout">
 						<p class="full-price">Предварительный итог: 6150.00 &#8381</p>
 						<p>Чтобы узнать стоимость доставки, перейдите к оформлению заказа.</p>
-						<div class="add-to-cart-btn">оформить заказ</div>
+						<a class="add-to-cart-btn" href="{{ url('/checkout') }}">оформить заказ</a>
 					</div>
 				</div>
 			</div>
@@ -180,8 +178,9 @@
 						<span class="add-info">прием звонков круглосуточно</span>
 					</div>
 					<div class="socials-footer">
-						<a href="https://wa.me/8xxxxxxxxxx"><img src="{{ asset('img/footer/socials/whatsapp.png') }}" alt="whatsapp" target="_blank"></a>
 						<a href="https://vk.com/_our_flowers"><img src="{{ asset('img/footer/socials/vk.png') }}" alt="vk" target="_blank"></a>
+						<a href="https://wa.me/8xxxxxxxxxx"><img src="{{ asset('img/footer/socials/whatsapp.png') }}" alt="whatsapp" target="_blank"></a>
+						<a href="https://telegram.me/_our_flowers"><img src="{{ asset('img/footer/socials/telegram.png') }}" alt="tg" target="_blank"></a>
 					</div>
 				</div>
 			</div>

@@ -14,13 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('/catalog', [App\Http\Controllers\CatalogController::class, 'index']);
 Route::get('/payment-and-delivery', [App\Http\Controllers\PaymentAndDeliveryController::class, 'index']);
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index']);
 Route::get('/faq', [App\Http\Controllers\FaqController::class, 'index']);
 Route::get('/contacts', [App\Http\Controllers\ContactsController::class, 'index']);
 
-Route::get('/product-card', [App\Http\Controllers\ProductCardController::class, 'index']);
+Route::get('/catalog', [App\Http\Controllers\CatalogController::class, 'index']);
+Route::get('/catalog/{translate_name}', [App\Http\Controllers\CatalogController::class, 'category']);
+Route::get('/catalog/filter', [App\Http\Controllers\CatalogController::class, 'filter']);
+
+
+Route::get('/product/{translate_name}', [App\Http\Controllers\ProductCardController::class, 'index']);
 
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index']);
 

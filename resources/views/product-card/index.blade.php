@@ -10,13 +10,13 @@
         <div class="container">
             <h6>Главная&nbsp;/ карточка</h6>
             <div class="card">
-                <img src="img/product-card/1.png" alt="product" class="product-img">
+                <img src="{{ asset('/') }}/{{ $product->img }}" alt="{{ $product->translate_name}}" class="product-img">
                 <div class="product-info">
-                    <h3>рубиновые искры</h3>
-                    <h5 class="price">1234.00 &#8381</h5>
-                    <p class="compound"><span>Состав</span>: Гвоздика (Диантус), Леукодендрон, Леукоспермум (Нутан), Лотос, Роза</p>
+                    <h3>{{ $product->name }}</h3>
+                    <h5 class="price">{{ $product->price }} &#8381</h5>
+                    <p class="compound"><span>Состав</span>: {{ $product->composition }}</p>
                     <div class="add-to-cart-wrapper">
-                        <div class="add-to-cart-btn">В корзину</div>
+                        <div class="add-to-cart-btn" data-id="{{ $product->id }}">В корзину</div>
                         <div class="amount">
                             <div class="decrement">-</div>
                             <div class="count-in-cart">1</div>
@@ -70,8 +70,8 @@
                 <div class="delivery">
                     <h4>стоимость доставки:</h4>
                     <ul>
-                        <li><strong>Бесплатно</strong> – при заказе на сумму <span class="green">от 2500 рублей</span</li>
-                        <li><strong>300 рублей</strong> – при заказе на сумму <span class="green">менее 2500 рублей</span</li>
+                        <li><strong>Бесплатно</strong> – при заказе на сумму <span class="green">от 2500 рублей</span></li>
+                        <li><strong>300 рублей</strong> – при заказе на сумму <span class="green">менее 2500 рублей</span></li>
                         <li>Так&nbsp;же вы&nbsp;можете забрать ваш заказ самостоятельно по&nbsp;адресу: г. Тула, пр. Ленина д. 111, оф. 11</li>
                     </ul>
                     <h4>Условия доставки:</h4>
@@ -84,52 +84,22 @@
             <div class="popular">
                 <h5>популярные товары</h5>
                 <div class="slider-wrapper">
-                    <img src="img/product-card/slider/left.png" alt="left" class="slider-left slider-desc disable">
+                    <img src="{{ asset('img/product-card/slider/left.png') }}" alt="left" class="slider-left slider-desc disable">
                     <div class="slider-content">
                         <div class="slider-track">
-                            <div class="slider-item">
-                                <a href="">
-                                    <img src="img/main/popular-section/slider/1.png" alt="1" class="slider-img">
-                                    <h4>name 1</h4>
-                                    <p>111.00 &#8381</p>
-                                </a>
-                                <div class="add-to-cart-btn">в корзину</div>
-                            </div>
-                            <div class="slider-item">
-                                <a href="">
-                                    <img src="img/main/popular-section/slider/2.png" alt="2" class="slider-img">
-                                    <h4>name 2</h4>
-                                    <p>90.00 &#8381</p>
-                                </a>
-                                <div class="add-to-cart-btn">в корзину</div>
-                            </div>
-                            <div class="slider-item">
-                                <a href="">
-                                    <img src="img/main/popular-section/slider/3.png" alt="3" class="slider-img">
-                                    <h4>name 3</h4>
-                                    <p>222.00 &#8381</p>
-                                </a>
-                                <div class="add-to-cart-btn">в корзину</div>
-                            </div>
-                            <div class="slider-item">
-                                <a href="">
-                                    <img src="img/main/popular-section/slider/4.png" alt="4" class="slider-img">
-                                    <h4>name 4</h4>
-                                    <p>2252.00 &#8381</p>
-                                </a>
-                                <div class="add-to-cart-btn">в корзину</div>
-                            </div>
-                            <div class="slider-item">
-                                <a href="">
-                                    <img src="img/main/popular-section/slider/5.png" alt="5" class="slider-img">
-                                    <h4>name 5</h4>
-                                    <p>984.00 &#8381</p>
-                                </a>
-                                <div class="add-to-cart-btn">в корзину</div>
-                            </div>
+                            @foreach ($favoriteProducts as $product)
+                                <div class="slider-item">
+                                    <a href="{{ url('/product') }}/{{ $product->translate_name }}">
+                                        <img src="{{ asset('/') }}/{{ $product->img }}" alt="{{ $product->translate_name }}" class="slider-img">
+                                        <h4>{{ $product->name }}</h4>
+                                        <p>{{ $product->price }} &#8381</p>
+                                    </a>
+                                    <div class="add-to-cart-btn" data-id="{{ $product->id }}">в корзину</div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
-                    <img src="img/product-card/slider/right.png" alt="right" class="slider-right slider-desc">
+                    <img src="{{ asset('img/product-card/slider/right.png') }}" alt="right" class="slider-right slider-desc">
                 </div>
             </div>
         </div>

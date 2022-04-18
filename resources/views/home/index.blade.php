@@ -72,46 +72,18 @@
                 <img src="{{ asset('img/main/popular-section/slider/left.png') }}" alt="left" class="slider-left slider-desc disable">
                 <div class="slider-content">
                     <div class="slider-track">
-                        <div class="slider-item">
-                            <a href="">
-                                <img src="img/main/popular-section/slider/1.png" alt="1" class="slider-img">
-                                <h4>name 1</h4>
-                                <p>111.00 &#8381</p>
-                            </a>
-                            <div class="add-to-cart-btn">в корзину</div>
-                        </div>
-                        <div class="slider-item">
-                            <a href="">
-                                <img src="img/main/popular-section/slider/2.png" alt="2" class="slider-img">
-                                <h4>name 2</h4>
-                                <p>90.00 &#8381</p>
-                            </a>
-                            <div class="add-to-cart-btn">в корзину</div>
-                        </div>
-                        <div class="slider-item">
-                            <a href="">
-                                <img src="img/main/popular-section/slider/3.png" alt="3" class="slider-img">
-                                <h4>name 3</h4>
-                                <p>222.00 &#8381</p>
-                            </a>
-                            <div class="add-to-cart-btn">в корзину</div>
-                        </div>
-                        <div class="slider-item">
-                            <a href="">
-                                <img src="img/main/popular-section/slider/4.png" alt="4" class="slider-img">
-                                <h4>name 4</h4>
-                                <p>2252.00 &#8381</p>
-                            </a>
-                            <div class="add-to-cart-btn">в корзину</div>
-                        </div>
-                        <div class="slider-item">
-                            <a href="">
-                                <img src="img/main/popular-section/slider/5.png" alt="5" class="slider-img">
-                                <h4>name 5</h4>
-                                <p>984.00 &#8381</p>
-                            </a>
-                            <div class="add-to-cart-btn">в корзину</div>
-                        </div>
+
+                        @foreach ($favoriteProducts as $product)
+                            <div class="slider-item">
+                                <a href="{{ url('/product') }}/{{ $product->translate_name }}">
+                                    <img src="{{ asset('/') }}/{{ $product->img }}" alt="{{ $product->translate_name }}" class="slider-img">
+                                    <h4>{{ $product->name }}</h4>
+                                    <p>{{ $product->price }} &#8381</p>
+                                </a>
+                                <div class="add-to-cart-btn" data-id="{{ $product->id }}">в корзину</div>
+                            </div>
+                        @endforeach
+
                     </div>
                 </div>
                 <img src="{{ asset('img/main/popular-section/slider/right.png') }}" alt="right" class="slider-right slider-desc">
