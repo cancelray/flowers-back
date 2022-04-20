@@ -2,7 +2,11 @@
 
 @section('page-title', 'Our Favorite Flowers - Main')
 
-@section('add-scripts', 'js/slider.min.js')
+@section('add-scripts')
+    <script defer src="{{ asset('js/slider.min.js') }}"></script>
+    <script defer src="{{ asset('/js/add-to-cart.min.js') }}"></script>
+@endsection
+
 
 @section('main-content')
 
@@ -80,7 +84,7 @@
                                     <h4>{{ $product->name }}</h4>
                                     <p>{{ $product->price }} &#8381</p>
                                 </a>
-                                <div class="add-to-cart-btn" data-id="{{ $product->id }}">в корзину</div>
+                                <div class="add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">в корзину</div>
                             </div>
                         @endforeach
 

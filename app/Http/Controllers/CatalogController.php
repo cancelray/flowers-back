@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Color;
 use App\Models\Format;
 use App\Models\Product;
+use App\Models\Favorite;
 
 class CatalogController extends Controller
 {
@@ -35,7 +36,21 @@ class CatalogController extends Controller
         $category = $getCategory[0];
 
         if ($category->id == 1) {
-            
+            $dbFavorites = Favorite::all(); 
+            $favoritesId = [];
+
+            foreach ($dbFavorites as $item) {
+                $favoritesId[] = $item['product_id'];
+                $products = Product::whereIn('id', $favoritesId)->get();
+            }
+
+            return view('catalog.index', [
+                'categories' => $categories,
+                'categoryName' => ' / '.$category->name,
+                'colors' => $colors,
+                'formats' => $formats,
+                'products' => $products
+            ]);
         }
 
         $products = Product::where('category_id', $category->id)->get();

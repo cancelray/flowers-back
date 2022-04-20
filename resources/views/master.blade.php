@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
@@ -7,9 +7,10 @@
         <title>@yield('page-title')</title>
         <meta name="description" content="template">
         <link href="{{ asset('style/css/index.min.css') }}" rel="stylesheet" type="text/css">
-        <script defer src="{{ asset('js/cart-show.min.js') }}"></script>
+        <script defer src="{{ asset('js/cart.js') }}"></script>
+		<script defer src="{{ asset('js/cart-show.min.js') }}"></script>
         <script defer src="{{ asset('js/burger.min.js') }}"></script>
-        <script defer src="{{ asset('/') }}/@yield('add-scripts')"></script>
+        @yield('add-scripts')
     </head>
 
 <body>
@@ -28,7 +29,7 @@
 					<a href="https://wa.me/8xxxxxxxxxx"><img src="{{ asset('img/header/socials/whatsapp.png') }}" alt="whatsapp" target="_blank"></a>
 					<a href="https://telegram.me/_our_flowers"><img src="{{ asset('img/header/socials/telegram.png') }}" alt="tg" target="_blank"></a>
 				</div>
-				<div class="cart-icon"><img src="{{ asset ('img/header/cart.png') }}" alt="cart">(3)</div>
+				<div class="cart-icon"><img src="{{ asset ('img/header/cart.png') }}" alt="cart"><p class="in-cart-count"></p></div>
 			</div>
 			<div class="container mobile-header">
 				<div class="mobile-menu">
@@ -37,7 +38,7 @@
 					<div class="menu-item"></div>
 				</div>
 				<div class="logo-header"><a href="{{ url('/') }}"><img src="{{ asset('img/header/logo.png') }}" alt="logo">Our Flowers</a></div>
-				<div class="cart-icon"><img src="{{ asset ('img/header/cart.png') }}" alt="cart">(3)</div>
+				<div class="cart-icon"><img src="{{ asset ('img/header/cart.png') }}" alt="cart"><p class="in-cart-count"></p></div>
 				<div class="mobile-menu-burger hide">
 					<div class="burger-wrapper">
 						<div class="burger-links">
@@ -75,66 +76,14 @@
 			<div class="cart-wrapper cart-hide">
 				<div class="cart-container">
 					<div class="cart-head">
-						<h3>ваша корзина</h3>
+						<h3 class="cart-header">ваша корзина</h3>
 						<div class="close-cart"><img src="{{ asset('img/header/cart/close.png') }}" alt="close"></div>
 					</div>
-					<div class="cart-contents">
-						<div class="cart-item">
-							<img src="img/header/cart/4.png" alt="4">
-							<div class="cart-info">
-								<div class="name-price">
-									<p class="in-cart-name">name flowers 4</p>
-									<p class="in-cart-price">2500 &#8381</p>
-								</div>
-								<div class="amount-delete">
-									<div class="in-cart-amount">
-										<div class="decrement">-</div>
-										<div class="count">1</div>
-										<div class="increment">+</div>
-									</div>
-									<p class="delete-from-cart">удалить</p>
-								</div>
-							</div>
-						</div>
-						<div class="cart-item">
-							<img src="img/header/cart/8.png" alt="8">
-							<div class="cart-info">
-								<div class="name-price">
-									<p class="in-cart-name">name flowers 8</p>
-									<p class="in-cart-price">1500 &#8381</p>
-								</div>
-								<div class="amount-delete">
-									<div class="in-cart-amount">
-										<div class="decrement">-</div>
-										<div class="count">1</div>
-										<div class="increment">+</div>
-									</div>
-									<p class="delete-from-cart">удалить</p>
-								</div>
-							</div>
-						</div>
-						<div class="cart-item">
-							<img src="img/header/cart/6.png" alt="6">
-							<div class="cart-info">
-								<div class="name-price">
-									<p class="in-cart-name">name flowers 6</p>
-									<p class="in-cart-price">2150 &#8381</p>
-								</div>
-								<div class="amount-delete">
-									<div class="in-cart-amount">
-										<div class="decrement">-</div>
-										<div class="count">1</div>
-										<div class="increment">+</div>
-									</div>
-									<p class="delete-from-cart">удалить</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<div class="cart-contents"></div>
 					<div class="cart-checkout">
-						<p class="full-price">Предварительный итог: 6150.00 &#8381</p>
+						<p class="full-price"></p>
 						<p>Чтобы узнать стоимость доставки, перейдите к оформлению заказа.</p>
-						<a class="add-to-cart-btn" href="{{ url('/checkout') }}">оформить заказ</a>
+						<a class="add-to-cart-btn cart-checkout-btn" href="{{ url('/checkout') }}">оформить заказ</a>
 					</div>
 				</div>
 			</div>

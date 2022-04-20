@@ -23,8 +23,13 @@ Route::get('/catalog', [App\Http\Controllers\CatalogController::class, 'index'])
 Route::get('/catalog/{translate_name}', [App\Http\Controllers\CatalogController::class, 'category']);
 Route::get('/catalog/filter', [App\Http\Controllers\CatalogController::class, 'filter']);
 
-
 Route::get('/product/{translate_name}', [App\Http\Controllers\ProductCardController::class, 'index']);
+
+Route::get('/cart/add/{id}', [App\Http\Controllers\CartController::class, 'addToCart']);
+Route::get('/cart/remove/{id}', [App\Http\Controllers\CartController::class, 'removeFromCart']);
+Route::get('/cart/decrement/{id}', [App\Http\Controllers\CartController::class, 'decrement']);
+Route::get('/cart/increment/{id}', [App\Http\Controllers\CartController::class, 'increment']);
+Route::get('/cart/show/', [App\Http\Controllers\CartController::class, 'getProducts']);
 
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index']);
 

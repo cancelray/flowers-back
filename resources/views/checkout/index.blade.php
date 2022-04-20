@@ -2,7 +2,9 @@
 
 @section('page-title', 'Our Favorite Flowers - Main')
 
-@section('add-scripts', 'js/delivery-show.min.js')
+@section('add-scripts')
+<script defer src="{{ asset('/js/delivery-show.min.js') }}"></script>
+@endsection
 
 @section('main-content')
 
@@ -86,58 +88,7 @@
                 <div class="order-information mobile-display-none">
                     <h3>ваш заказ</h3>
                     <div class="order-contents">
-                        <div class="order-item">
-                            <img src="img/checkout/4.png" alt="4">
-                            <div class="order-info">
-                                <div class="name-price">
-                                    <p class="in-order-name">name flowers 4</p>
-                                    <p class="in-order-price">2500 &#8381</p>
-                                </div>
-                                <div class="amount-delete">
-                                    <div class="in-order-amount">
-                                        <div class="decrement">-</div>
-                                        <div class="count">1</div>
-                                        <div class="increment">+</div>
-                                    </div>
-                                    <p class="delete-from-order">удалить</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="order-item">
-                            <img src="img/checkout/8.png" alt="8">
-                            <div class="order-info">
-                                <div class="name-price">
-                                    <p class="in-order-name">name flowers 8</p>
-                                    <p class="in-order-price">1500 &#8381</p>
-                                </div>
-                                <div class="amount-delete">
-                                    <div class="in-order-amount">
-                                        <div class="decrement">-</div>
-                                        <div class="count">1</div>
-                                        <div class="increment">+</div>
-                                    </div>
-                                    <p class="delete-from-order">удалить</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="order-item">
-                            <img src="img/checkout/6.png" alt="6">
-                            <div class="order-info">
-                                <div class="name-price">
-                                    <p class="in-order-name">name flowers 6</p>
-                                    <p class="in-order-price">2150 &#8381</p>
-                                </div>
-                                <div class="amount-delete">
-                                    <div class="in-order-amount">
-                                        <div class="decrement">-</div>
-                                        <div class="count">1</div>
-                                        <div class="increment">+</div>
-                                    </div>
-                                    <p class="delete-from-order">удалить</p>
-                                </div>
-                            </div>
-                        </div>
-                        <h3>Предварительный итог: 6150.00 &#8381</h3>
+
                     </div>
                 </div>
             </div>

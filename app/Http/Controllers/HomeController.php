@@ -19,6 +19,7 @@ class HomeController extends Controller
 
         $favoriteProducts = Product::whereIn('id', $favoriteProductsIdArr)->get();
 
-        return view('home.index', ['favoriteProducts' => $favoriteProducts]);
+        return view('home.index', [
+            'favoriteProducts' => $favoriteProducts]);
     }
 }
