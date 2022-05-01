@@ -3,8 +3,8 @@
 const deleteFromCart = (click) => {
     const productId = click.target.dataset.id;
 
-    let request=new XMLHttpRequest;
-    let url="/flowers-laravel/public/cart/remove/" + productId;
+    let request = new XMLHttpRequest;
+    let url = "/flowers-laravel/public/cart/remove/" + productId;
   
     request.addEventListener("readystatechange", () => {
         if (request.readyState === 4 && request.status === 200) {
@@ -20,7 +20,7 @@ const decrementInCart = (click) => {
     const productId = click.target.dataset.id;
 
     let request = new XMLHttpRequest;
-    let url="/flowers-laravel/public/cart/decrement/" + productId;
+    let url = "/flowers-laravel/public/cart/decrement/" + productId;
   
     request.addEventListener("readystatechange", () => {
         if (request.readyState === 4 && request.status === 200) {
@@ -36,7 +36,7 @@ const incrementInCart = (click) => {
     const productId = click.target.dataset.id;
 
     let request = new XMLHttpRequest;
-    let url="/flowers-laravel/public/cart/increment/" + productId;
+    let url = "/flowers-laravel/public/cart/increment/" + productId;
   
     request.addEventListener("readystatechange", () => {
         if (request.readyState === 4 && request.status === 200) {

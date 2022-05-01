@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('translate_name');
-            $table->decimal('price', 6, 2);
+            $table->decimal('price', 8, 2);
             $table->int('category_id');
             $table->string('composition');
             $table->int('format_id');

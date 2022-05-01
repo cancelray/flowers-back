@@ -21,7 +21,8 @@ Route::get('/contacts', [App\Http\Controllers\ContactsController::class, 'index'
 
 Route::get('/catalog', [App\Http\Controllers\CatalogController::class, 'index']);
 Route::get('/catalog/{translate_name}', [App\Http\Controllers\CatalogController::class, 'category']);
-Route::get('/catalog/filter', [App\Http\Controllers\CatalogController::class, 'filter']);
+Route::get('/catalog/get/products', [App\Http\Controllers\CatalogController::class, 'getFromDb']);
+Route::get('/catalog/{translate_name}/get/products', [App\Http\Controllers\CatalogController::class, 'getFromDbByCategory']);
 
 Route::get('/product/{translate_name}', [App\Http\Controllers\ProductCardController::class, 'index']);
 

@@ -5,6 +5,7 @@
 @section('add-scripts')
     <script defer src="{{ asset('/js/catalog.min.js') }}"></script>
     <script defer src="{{ asset('/js/add-to-cart.min.js') }}"></script>
+    <script defer src="{{ asset('/js/filter.js') }}"></script>
 @endsection
 
 
@@ -33,7 +34,7 @@
 
                         @foreach ($colors as $color)
                             <div class="form-item">
-                                <input type="checkbox" id="{{ $color->for_checkbox }}" data-id="{{ $color->id }}">
+                                <input type="checkbox" id="{{ $color->for_checkbox }}" data-filter data-id="{{ $color->id }}" class="color-filter">
                                 <label for="{{ $color->for_checkbox }}">{{ $color->color }}</label>
                             </div>
                         @endforeach
@@ -44,13 +45,12 @@
 
                         @foreach ($formats as $format)
                             <div class="form-item">
-                                <input type="checkbox" id="{{ $format->for_checkbox }}" data-id="{{ $format->id }}">
+                                <input type="checkbox" id="{{ $format->for_checkbox }}" data-filter data-id="{{ $format->id }}" class="format-filter">
                                 <label for="{{ $format->for_checkbox }}">{{ $format->format }}</label>
                             </div>
                         @endforeach
 
                     </div>
-                    <button class="add-to-cart-btn">Применить</button>
                 </form>
             </div>
             <div class="catalog-wrapper">
@@ -60,8 +60,8 @@
                             <h5>по цвету</h5>
                             
                             @foreach ($colors as $color)
-                                <div class="form-item">
-                                    <input type="checkbox" id="{{ $color->for_checkbox }}-desc">
+                                <div class="form-item"> 
+                                    <input type="checkbox" id="{{ $color->for_checkbox }}-desc" data-filter data-id="{{ $color->id }}" class="color-filter">
                                     <label for="{{ $color->for_checkbox }}-desc">{{ $color->color }}</label>
                                 </div>
                             @endforeach
@@ -72,13 +72,12 @@
 
                             @foreach ($formats as $format)
                                 <div class="form-item">
-                                    <input type="checkbox" id="{{ $format->for_checkbox }}-desc">
+                                    <input type="checkbox" id="{{ $format->for_checkbox }}-desc" data-filter data-id="{{ $format->id }}" class="format-filter">
                                     <label for="{{ $format->for_checkbox }}-desc">{{ $format->format }}</label>
                                 </div>
                             @endforeach
 
                         </div>
-                        <button class="add-to-cart-btn">Применить</button>
                     </form>
                 </div>
                 <div class="products-wrapper">
