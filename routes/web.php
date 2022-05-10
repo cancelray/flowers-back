@@ -37,3 +37,4 @@ Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'
 Route::get('/payment-success', [App\Http\Controllers\PaymentSuccessController::class, 'index']);
 Route::get('/payment-error', [App\Http\Controllers\PaymentErrorController::class, 'index']);
 
+Route::post('/sendmail', [App\Http\Controllers\MailController::class, 'customOrder']);

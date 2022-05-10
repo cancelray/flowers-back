@@ -5,10 +5,15 @@
 @section('add-scripts')
     <script defer src="{{ asset('js/slider.min.js') }}"></script>
     <script defer src="{{ asset('/js/add-to-cart.min.js') }}"></script>
+    <script defer src="{{ asset('/js/custom-form-valid.js') }}"></script>
 @endsection
 
 
 @section('main-content')
+
+    <style>
+        
+    </style>
 
     <section class="first-look">
         <div class="container">
@@ -139,7 +144,7 @@
     </section>
 
     <section class="custom-form-section">
-        <div class="container">
+        <div class="container" id="form-container">
             <h2 class="special">особенный</h2>
             <h2 class="occasion">повод?</h2>
             <div class="custom-form">
@@ -148,17 +153,30 @@
                     бюджет и&nbsp;для любого события по&nbsp;вашему индивидуальному заказу.
                 </p>
                 <p>Заполните форму обратной связи и наш специалист свяжется с вами в течение 15 минут.</p>
-                <form action="">
-                    <input type="text" placeholder="ваше имя">
-                    <input type="tel" placeholder="ваш телефон">
-                    <textarea name="" id="" placeholder="пожелания к заказу"></textarea>
-                    <button class="custom-form-btn">отправить</button>
+                <form action="#" id="custom-from">
+                    <input type="text" placeholder="ваше имя*" class="_custom-input" name="name">
+                    <input type="text" placeholder="ваш телефон*" class="_custom-input" name="phone">
+                    <textarea placeholder="пожелания к заказу*" class="_custom-input" name="custom-order"></textarea>
+                    <button class="custom-form-btn" type="submit">отправить</button>
+                    <input type="hidden" name="token" value="{{ csrf_token() }}">
                 </form>
                 <p class="confidentiality">
                     Нажимая на кнопку «Отправить», я даю свое согласие на обработку персональных данных, 
                     в соответствии с <a href="/">Политикой конфиденциальности</a> 
                 </p>
+                <p class="required">
+                    *поля обязательные для заполнения
+                </p>
             </div>
+        </div>
+        <div class="popup">
+            <div class="popup-wrapper">
+                <p class="popup-txt"></p>
+                <div class="custom-form-btn popup-btn">закрыть</div>
+            </div>
+        </div>
+        <div class="loader-custom-form loader-hide">
+            <div class="lds-dual-ring"></div>
         </div>
     </section>
 

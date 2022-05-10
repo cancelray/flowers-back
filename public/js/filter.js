@@ -16,7 +16,8 @@ async function getProducts() {
 
 getProducts().then(productsArr => {
     const allFilters = document.querySelectorAll('input[data-filter]');
-    const productsWrapper = document.querySelector('.products-wrapper');
+    const productsWrapper = document.querySelector('.products');
+    const pagination = document.querySelector('.pagination');
 
     const colorsArr = [];
     const formatsArr = [];
@@ -27,6 +28,7 @@ getProducts().then(productsArr => {
         filter.onchange = () => {
             if (filter.checked) {
                 productsWrapper.innerHTML = '';
+                pagination.style.display = 'none';
 
                 if (filter.classList.contains('color-filter')) {
                     colorsArr.push(filter.dataset.id);
@@ -116,12 +118,8 @@ getProducts().then(productsArr => {
             }
             
             if (colorsArr.length === 0 && formatsArr.length === 0) {
-                productsArr.forEach(product => {
-                    productCreate(product, productsWrapper);
-                })
-            }
-
-            if (!productsWrapper.childNodes.length) {
+                window.location.href = window.location.href;
+            } else if (!productsWrapper.childNodes.length) {
                 const noProductsFound = document.createElement('h4');
                 noProductsFound.innerText = 'Поиск не дал результатов. Попробуйте изменить фильтры';
 

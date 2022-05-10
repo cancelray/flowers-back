@@ -1,3 +1,5 @@
+"use strict";
+
 const addToCart = document.querySelectorAll(".add-to-cart");
 
 addToCart.forEach( elem => {
@@ -5,7 +7,7 @@ addToCart.forEach( elem => {
         const productId=click.target.dataset.id;
         
         let request = new XMLHttpRequest;
-        url = "/flowers-laravel/public/cart/add/"+productId;
+        const url = "/flowers-laravel/public/cart/add/"+productId;
         
         request.addEventListener("readystatechange", ()=> {4===request.readyState&&200===request.status&&getCart()});
 

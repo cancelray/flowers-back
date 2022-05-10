@@ -81,19 +81,21 @@
                     </form>
                 </div>
                 <div class="products-wrapper">
-
-                    @foreach ($products as $product)
-                        <div class="catalog-item">
-                            <a href="{{ url('/product') }}/{{ $product->translate_name }}">
-                                <img src="{{ asset('/') }}/{{ $product->img }}" alt="{{ $product->translate_name }}">
-                                <h4>{{ $product->name }}</h4>
-                                <h4 class="price">{{ $product->price }} &#8381</h4>
-                            </a>
-                            <div class="add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">в корзину</div>
-                        </div>
-                    @endforeach
-
+                    <div class="products">
+                        @foreach ($products as $product)
+                            <div class="catalog-item">
+                                <a href="{{ url('/product') }}/{{ $product->translate_name }}">
+                                    <img src="{{ asset('/') }}/{{ $product->img }}" alt="{{ $product->translate_name }}">
+                                    <h4>{{ $product->name }}</h4>
+                                    <h4 class="price">{{ $product->price }} &#8381</h4>
+                                </a>
+                                <div class="add-to-cart-btn add-to-cart" data-id="{{ $product->id }}">в корзину</div>
+                            </div>
+                        @endforeach
+                    </div>
+                    {{ $products->links('pagination.index') }}
                 </div>
+
             </div>
         </div>
     </section>

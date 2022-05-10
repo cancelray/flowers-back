@@ -16,14 +16,14 @@ class CatalogController extends Controller
         $categories = Category::all();
         $colors = Color::all();
         $formats = Format::all();
-        $products = Product::all();
+        $products = Product::paginate(9);
 
         return view('catalog.index', [
             'categories' => $categories,
             'categoryName' => '',
             'colors' => $colors,
             'formats' => $formats,
-            'products' => $products
+            'products' => $products,
         ]);
     }
 
@@ -43,7 +43,7 @@ class CatalogController extends Controller
                 $favoritesId[] = $item['product_id'];
             }
 
-            $products = Product::whereIn('id', $favoritesId)->get();
+            $products = Product::whereIn('id', $favoritesId)->paginate(9);
 
             return view('catalog.index', [
                 'categories' => $categories,
@@ -55,10 +55,10 @@ class CatalogController extends Controller
         }
 
         if ($category->translate_name == 'bouquets') {
-            $bouquets = Category::where('translate_name', 'bouquets') -> get();
-            $roses = Category::where('translate_name', 'roses') -> get();
+            $bouquets = Category::where('translate_name', 'bouquets')->get();
+            $roses = Category::where('translate_name', 'roses')->get();
 
-            $products = Product::whereIn('category_id', [$bouquets[0]->id, $roses[0]->id])->get();
+            $products = Product::whereIn('category_id', [$bouquets[0]->id, $roses[0]->id])->paginate(9);;
 
             return view('catalog.index', [
                 'categories' => $categories,
@@ -69,7 +69,7 @@ class CatalogController extends Controller
             ]);
         }
 
-        $products = Product::where('category_id', $category->id)->get();
+        $products = Product::where('category_id', $category->id)->paginate(9);
 
         return view('catalog.index', [
             'categories' => $categories,
