@@ -8,7 +8,7 @@
 
     <section class="payment-and-delivery">
         <div class="container">
-            <h6>Главная&nbsp;/ доставка и&nbsp;оплката</h6>
+            <h6><a href="{{ url('/') }}">Главная</a>&nbsp;/ доставка и&nbsp;оплката</h6>
             <h2 class="delivery-header">доставка</h2>
             <h2 class="payment-header">и оплата</h2>
             <div class="payment">

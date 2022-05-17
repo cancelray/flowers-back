@@ -11,7 +11,7 @@
 
     <section class="product-card">
         <div class="container">
-            <h6>Главная&nbsp;/ карточка</h6>
+            <h6><a href="{{ url('/') }}">Главная</a>&nbsp;/ {{ $product->name }}</h6>
             <div class="card">
                 <img src="{{ asset('/') }}/{{ $product->img }}" alt="{{ $product->translate_name}}" class="product-img">
                 <div class="product-info">
@@ -20,11 +20,6 @@
                     <p class="compound"><span>Состав</span>: {{ $product->composition }}</p>
                     <div class="add-to-cart-wrapper">
                         <div class="add-to-cart-btn" data-id="{{ $product->id }}">В корзину</div>
-                        <div class="amount">
-                            <div class="decrement">-</div>
-                            <div class="count-in-cart">1</div>
-                            <div class="increment">+</div>
-                        </div>
                     </div>
                 </div>
             </div>

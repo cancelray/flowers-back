@@ -13,7 +13,7 @@
 
     <section class="catalog">
         <div class="container">
-            <h6>Главная&nbsp;/ каталог {{ $categoryName }}</h6>
+            <h6><a href="{{ url('/') }}">Главная</a>&nbsp;/ каталог {{ $categoryName }}</h6>
             <h2 class="catalog-h">каталог</h2>
             <h2 class="bouquets-h">букетов</h2>
             <p>В&nbsp;нашем магазине самый большой выбор букетов:</p>

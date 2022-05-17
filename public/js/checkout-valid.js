@@ -10,11 +10,15 @@ const checkoutSubmit = async function(event) {
         if (values === notFilledInputs) {
             const notFillError = 'Заполнтие все обязательные поля';
             showCheckoutPopup(notFillError);
+            return;
         } else {
             const validError = 'Проверьте правильность заполнения полей';
             showCheckoutPopup(validError);
+            return;
         }
     }
+
+    
 }
 
 const checkoutValid = (notFilledInputs) => {

@@ -6,7 +6,7 @@ const customFormSubmit = async function(event) {
     let values = customValidate(customForm);
 
     if (typeof(values) === 'number') {
-        const validError = 'Проверьте правильность заполнения полей';
+        const validError = 'Проверьте правильность заполнения полей';   
         showPopup(validError);
         return;
     } else {

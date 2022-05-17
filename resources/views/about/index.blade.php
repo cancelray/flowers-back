@@ -8,7 +8,7 @@
 
     <section class="about">
         <div class="container">
-            <h6>Главная&nbsp;/ о нас</h6>
+            <h6><a href="{{ url('/') }}">Главная</a>&nbsp;/ о нас</h6>
             <h2>о нас</h2>
             <div class="about-item first-item">
                 <h5>мы молодая команда разных людей с&nbsp;одинаковыми ценностями.</h5>

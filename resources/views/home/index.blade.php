@@ -10,11 +10,6 @@
 
 
 @section('main-content')
-
-    <style>
-        
-    </style>
-
     <section class="first-look">
         <div class="container">
             <div class="catalog-ref">
@@ -162,7 +157,7 @@
                 </form>
                 <p class="confidentiality">
                     Нажимая на кнопку «Отправить», я даю свое согласие на обработку персональных данных, 
-                    в соответствии с <a href="/">Политикой конфиденциальности</a> 
+                    в соответствии с <a href="{{ url('/confidential') }}">Политикой конфиденциальности</a> 
                 </p>
                 <p class="required">
                     *поля обязательные для заполнения

@@ -8,7 +8,7 @@
 
     <section class="contacts">
         <div class="container">
-            <h6>Главная&nbsp;/ контакты</h6>
+            <h6><a href="{{ url('/') }}">Главная</a>&nbsp;/ контакты</h6>
             <h2>контакты</h2>
             <div class="contact-wrapper">
                 <div class="contact-item">

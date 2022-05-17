@@ -18,6 +18,7 @@ Route::get('/payment-and-delivery', [App\Http\Controllers\PaymentAndDeliveryCont
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index']);
 Route::get('/faq', [App\Http\Controllers\FaqController::class, 'index']);
 Route::get('/contacts', [App\Http\Controllers\ContactsController::class, 'index']);
+Route::get('/confidential', [App\Http\Controllers\СonfidentialController::class, 'index']);
 
 Route::get('/catalog', [App\Http\Controllers\CatalogController::class, 'index']);
 Route::get('/catalog/{translate_name}', [App\Http\Controllers\CatalogController::class, 'category']);
@@ -33,6 +34,7 @@ Route::get('/cart/increment/{id}', [App\Http\Controllers\CartController::class, 
 Route::get('/cart/show/', [App\Http\Controllers\CartController::class, 'getProducts']);
 
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index']);
+Route::get('/checkout/get', [App\Http\Controllers\CheckoutController::class, 'getPrices']);
 
 Route::get('/payment-success', [App\Http\Controllers\PaymentSuccessController::class, 'index']);
 Route::get('/payment-error', [App\Http\Controllers\PaymentErrorController::class, 'index']);

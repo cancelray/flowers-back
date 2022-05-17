@@ -8,15 +8,9 @@
 @endsection
 
 @section('main-content')
-
-    <style>
-        
-        @media(max-width: 768px){}
-    </style>
-
     <section class="checkout">
         <div class="container" id="checkout-container">
-            <h6>Главная&nbsp;/ оформление заказа</h6>
+            <h6><a href="{{ url('/') }}">Главная</a>&nbsp;/ оформление заказа</h6>
             <h2 class="registration">оформление</h2>
             <h2 class="order">заказа</h2>
             <div class="checkout-wrapper">
@@ -77,12 +71,12 @@
                             <input type="radio" id="crypto" name="payment-form" value="crypto" class="cusom-ratio-input">
                             <label for="crypto" class="custom-radio">Криптовалюта</label>
                         </div>
-                        <p class="delivery-price">Доставка = 0 &#8381</p>
-                        <p class="total-price">Общая сумма заказа 334.00 &#8381</p>
+                        <p class="delivery-price">Доставка =  &#8381</p>
+                        <p class="total-price">Общая сумма заказа  &#8381</p>
                         <button type="submit" class="custom-form-btn">К оплате</button>
                         <span class="confidentiality-terms">
                             Нажимая  на кнопку «К Оплате», я даю свое согласие на обработку персональных данных, в соответствии с 
-                            <a href="" class="terms-link">Политикой конфиденциальности</a>, а так же ознакомлен с условиями оплаты и доставки
+                            <a href="{{ url('/confidential') }}" class="terms-link">Политикой конфиденциальности</a>, а так же ознакомлен с условиями оплаты и доставки
                         </span>
                         <br>
                         <span class="confidentiality-terms">

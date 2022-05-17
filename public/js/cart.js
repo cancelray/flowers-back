@@ -228,9 +228,27 @@ async function getCart() {
     cartPrice.innerText = 'Предварительный итог: ' + productsJson[productsJson.length - 2]['totalPrice'] + ' \u20bd';
 
     if (isCheckout) {
+        const totalPrice = document.querySelector('.total-price');
+        const deliveryPrice = document.querySelector('.delivery-price');
+
+        const freeDeliveryThreshold = 2500;
+        const delivery = 300;
+        let checkoutPrice = productsJson[productsJson.length - 2]['totalPrice']
+
+        if (productsJson[productsJson.length - 2]['totalPrice'] < freeDeliveryThreshold) {
+            checkoutPrice += delivery;
+            totalPrice.innerText = `Общая сумма заказа ${checkoutPrice} ₽`;
+            deliveryPrice.innerText = `Доставка = ${delivery} ₽`;
+        } else {
+            totalPrice.innerText = `Общая сумма заказа ${checkoutPrice} ₽`;
+            deliveryPrice.innerText = `Доставка = ${0} ₽`;
+        }
+
         const orderPrice = document.createElement('h3');
         orderPrice.innerText = 'Предварительный итог: ' + productsJson[productsJson.length - 2]['totalPrice'] + ' \u20bd';
         orderContents.appendChild(orderPrice);
+        
+
     }
 }
 

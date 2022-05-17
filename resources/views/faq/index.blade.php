@@ -2,13 +2,15 @@
 
 @section('page-title', 'Our Favorite Flowers - FAQ')
 
-@section('add-scripts', 'js/faq.min.js')
+@section('add-scripts')
+    <script defer src="{{ asset('/js/faq.min.js') }}"></script>
+@endsection
 
 @section('main-content')
 
     <section class="faq">
         <div class="container">
-            <h6>Главная&nbsp;/ faq</h6>
+            <h6><a href="{{ url('/') }}">Главная</a>&nbsp;/ faq</h6>
             <h2>faq</h2>
             <div class="faq-wrapper">
                 <div class="faq-item">
