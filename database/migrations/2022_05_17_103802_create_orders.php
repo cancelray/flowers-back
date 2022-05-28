@@ -15,10 +15,23 @@ return new class extends Migration
     {
         Schema::create('favorites', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('product_id');
-            $table->text('delivery_address');
+            $table->string('name');
+            $table->string('phone');
+            $table->string('recipient_phone');
+            $table->string('recipient_name');
+            $table->text('comment');
+            $table->string('delivery_type');
+            $table->string('delivery_city');
+            $table->string('delivery_street');
+            $table->string('delivery_bldng');
+            $table->string('delivery_house');
+            $table->string('delivery_room');
+            $table->string('delivery_time');
+            $table->string('payment_type');
+            $table->string('full_price');
+            $table->boolean('is_paid');
             $table->timestamps();
-        });
+        });   
     }
 
     /**

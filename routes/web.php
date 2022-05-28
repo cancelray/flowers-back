@@ -34,7 +34,8 @@ Route::get('/cart/increment/{id}', [App\Http\Controllers\CartController::class, 
 Route::get('/cart/show/', [App\Http\Controllers\CartController::class, 'getProducts']);
 
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index']);
-Route::get('/checkout/get', [App\Http\Controllers\CheckoutController::class, 'getPrices']);
+Route::post('/cartCheckout', [App\Http\Controllers\CartController::class, 'cartCheckout']);
+
 
 Route::get('/payment-success', [App\Http\Controllers\PaymentSuccessController::class, 'index']);
 Route::get('/payment-error', [App\Http\Controllers\PaymentErrorController::class, 'index']);

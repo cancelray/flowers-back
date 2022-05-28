@@ -24,7 +24,7 @@
                         <label for="email">Ваш e-mail*</label>
                         <input type="text" name="email" placeholder="Введите вашу почту" class="_required-input _main-checkout">
                         <label for="receiver-phone">Телефон получателя (необязательно)</label>
-                        <input type="text" name="receiver-phone" placeholder="Введите вашу почту" class="_main-checkout">
+                        <input type="text" name="receiver-phone" placeholder="Введите телефон получателя" class="_main-checkout">
                         <label for="receiver-name">Имя получателя (необязательно)</label>
                         <input type="text" name="receiver-name" placeholder="Введите имя получателя" class="_main-checkout">
                         <label for="comment">Комментарий к заказу</label>
@@ -82,6 +82,7 @@
                         <span class="confidentiality-terms">
                             * поля обязательные для заполнения
                         </span>
+                        <input type="hidden" name="checkout-token" value="{{ csrf_token() }}">
                     </form>
                 </div>
                 <div class="order-information mobile-display-none">
@@ -97,6 +98,9 @@
                 <p class="checkout-popup-txt"></p>
                 <div class="custom-form-btn checkout-popup-btn">закрыть</div>
             </div>
+        </div>
+        <div class="loader-checkout-form loader-hide">
+            <div class="lds-dual-ring"></div>
         </div>
     </section>
 

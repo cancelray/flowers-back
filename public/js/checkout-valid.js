@@ -4,10 +4,10 @@ const checkoutSubmit = async function(event) {
     event.preventDefault();
     const notFilledInputs = 1000;
 
-    let values = checkoutValid(notFilledInputs);
+    let orderInfo = checkoutValid(notFilledInputs);
 
-    if (typeof(values) === 'number') {
-        if (values === notFilledInputs) {
+    if (typeof(orderInfo) === 'number') {
+        if (orderInfo === notFilledInputs) {
             const notFillError = 'Заполнтие все обязательные поля';
             showCheckoutPopup(notFillError);
             return;
@@ -18,7 +18,29 @@ const checkoutSubmit = async function(event) {
         }
     }
 
+    showChekoutLoader();
+
+    const orderInfoJson = JSON.stringify(orderInfo);
+    console.log(orderInfoJson);
+
+    const inputToken = document.querySelector('input[name="checkout-token"]');
+    let token = inputToken.value;
     
+    let response = await fetch('/flowers-laravel/public/cartCheckout', {
+        headers: {'X-CSRF-TOKEN': token},
+        method: 'POST',
+        body: orderInfoJson
+    });
+    if (response.ok) {
+        removeCheckoutLoader();
+        checkoutForm.reset();
+        const success = 'Ваша заявка принята';
+        showCheckoutPopup(success);
+    } else {
+        removeCheckoutLoader();
+        const fail = 'Произошла ошибка сервера. Попробуйте ещё раз'
+        showCheckoutPopup(fail);
+    }
 }
 
 const checkoutValid = (notFilledInputs) => {
@@ -79,6 +101,9 @@ const checkoutValid = (notFilledInputs) => {
         const input = mainCheckout[i];
         errorRemove(input);
 
+        value.receiverName = '';    
+        value.receiverPhone = '';
+
         if (input.attributes.name.value === 'name' || (input.attributes.name.value === 'receiver-name' && input.value !== '')) {
             if (input.value.length < 3 || !nameValid(input)) {
                 errorAdd(input);
@@ -100,31 +125,31 @@ const checkoutValid = (notFilledInputs) => {
             } else {
                 value.email = input.value;
             }
-        } else if (input.attributes.name.value === 'comment' && input.value !== '' ) {
+        } else if (input.attributes.name.value === 'comment') {
             value.comment = input.value;
         }
     }
 
-    deliveryCheck.value === 'self-carrier' ? value.selfCarrier = true : value.courierDelivery = true;
+    deliveryCheck.value === 'self-carrier' ? value.courierDelivery = false : value.courierDelivery = true;
     value.payment = paymentCheck.value;
 
-    if (deliveryCheck.value === 'courier-delivery') {
-        deliveryCheckout.forEach(input => {
-            switch (input.attributes.name.value) {
-                case 'city': value.deliveryCity = input.value;
-                    break;
-                case 'street': value.deliveryStreet = input.value;
-                    break;
-                case 'building': value.deliveryBuilding = input.value;
-                    break;
-                case 'room': value.deliveryRoom = input.value;
-                    break;
-                case 'time': value.deliveryTime = input.value;
-                    break;
-                
-            }
-        });
-    }
+    deliveryCheckout.forEach(input => {
+        switch (input.attributes.name.value) {
+            case 'city': value.deliveryCity = input.value;
+                break;
+            case 'street': value.deliveryStreet = input.value;
+                break;
+            case 'building': value.deliveryBuilding = input.value;
+                break;
+            case 'house': value.deliveryHouse = input.value;
+                break;
+            case 'room': value.deliveryRoom = input.value;
+                break;
+            case 'time': value.deliveryTime = input.value;
+                break;
+            
+        }
+    });
 
     if (errors > 0) {
         return errors;
@@ -153,6 +178,17 @@ const emailValid = (input) => {
     return /^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$/.test(input.value);
 }
 
+const showChekoutLoader = () => {
+    loader.classList.remove('loader-hide');
+    checkoutContainer.classList.add('low-opacity');
+}
+
+const removeCheckoutLoader = () => {
+    loader.classList.add('loader-hide');
+    checkoutContainer.classList.remove('low-opacity');
+}
+
+
 const showCheckoutPopup = (text) => {
     checkoutPopup.classList.add('show-checkout-popup');
     const checkoutPopupText = document.querySelector('.checkout-popup-txt');
@@ -168,6 +204,8 @@ const closeCheckoutPopup = () => {
 const checkoutForm = document.getElementById('checkout-form');
 checkoutForm.addEventListener('submit', checkoutSubmit);
 
+const loader = document.querySelector('.loader-checkout-form');
+
 const checkoutPopup = document.querySelector('.checkout-popup');
 const checkoutPopupWrapper = document.querySelector('.checkout-popup-wrapper');
 const checkoutPopupBtn = document.querySelector('.checkout-popup-btn');
@@ -181,3 +219,4 @@ window.onclick = (click) => {
         closeCheckoutPopup();
     }
 }
+

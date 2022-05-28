@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Models\Order;
+use App\Models\OrderProduct;
 
 class CartController extends Controller
 {
@@ -53,6 +56,62 @@ class CartController extends Controller
     public function increment($id) 
     {
         $this->addToCart($id);
+    }
+
+    public function cartCheckout(Request $request) 
+    {
+        $freeDeliveryThreshold = 2500;
+        $delivery = 300;
+
+        $cart = $this->getCartFromSession();
+        $jsonOrderInfo = $request->getContent();
+        $orderInfo = json_decode($jsonOrderInfo);
+
+        $products = $this->getProducts();
+        $totalPrice = $products[count($products) - 2]['totalPrice'];
+
+        $date = date("Y-m-d H:i:s");
+
+        if ($totalPrice < $freeDeliveryThreshold) {
+            $totalPrice += $delivery;
+        }
+
+        if ($orderInfo->courierDelivery) {
+            $deliveryType = 'Курьером';
+        } else {
+            $deliveryType = 'Самовывоз';
+        }
+
+        $orderId = DB::table('orders')->insertGetId([
+            'name' => $orderInfo->name,
+            'phone' => $orderInfo->phone,
+            'email' => $orderInfo->email,
+            'recipient_phone' => $orderInfo->receiverPhone,
+            'recipient_name' => $orderInfo->receiverName,
+            'comment' => $orderInfo->comment,
+            'delivery_type' => $deliveryType,
+            'delivery_city' =>  $orderInfo->deliveryCity,
+            'delivery_street' => $orderInfo->deliveryStreet,
+            'delivery_bldng' => $orderInfo->deliveryBuilding,
+            'delivery_house' => $orderInfo->deliveryHouse,
+            'delivery_room' => $orderInfo->deliveryRoom,
+            'delivery_time' => $orderInfo->deliveryTime,
+            'payment_type' => $orderInfo->payment,
+            'full_price' => $totalPrice,
+            'is_paid' => 0,
+            'created_at' => $date,	
+            'updated_at' => $date
+        ]);
+
+        foreach($cart as $productId => $count) {
+            DB::table('order_products')->insert([
+                'product_id' => $productId,
+                'count' => $count,
+                'order_id' => $orderId
+            ]);
+        }
+
+        // return response()->json("success");
     }
 
     public function getProducts()

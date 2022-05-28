@@ -6,6 +6,8 @@
 
 @section('main-content')
 
+    {{$order}}
+
     <section class="about">
         <div class="container">
             <h6><a href="{{ url('/') }}">Главная</a>&nbsp;/ о нас</h6>
