@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('formats', function (Blueprint $table) {
             $table->increments('id');
             $table->string('format');
+            $table->string('for_checkbox');
             $table->timestamps();
         });
     }

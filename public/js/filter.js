@@ -136,10 +136,10 @@ const productCreate = (product, productsWrapper) => {
     
     const productLink = document.createElement('a');
     
-    productLink.href = '/flowers-laravel/public/product/' + product['translate_name'];
+    productLink.href = '/product/' + product['translate_name'];
 
     const productImg = document.createElement('img');
-    productImg.src = '/flowers-laravel/public/' + product['img'];
+    productImg.src = '/img/catalog/' + product['img'];
     productImg.alt = product['translate_name'];
     productLink.appendChild(productImg);
 
@@ -162,4 +162,16 @@ const productCreate = (product, productsWrapper) => {
     catalogItem.appendChild(addToCartBtn);
 
     productsWrapper.appendChild(catalogItem);
+
+    addToCartBtn.addEventListener("click", click => {
+        const productId=click.target.dataset.id;
+        console.log(123);
+        let request = new XMLHttpRequest;
+        const url = "/cart/add/"+productId;
+        
+        request.addEventListener("readystatechange", ()=> {4===request.readyState&&200===request.status&&getCart()});
+
+        request.open("GET", url);
+        request.send();
+    });
 }

@@ -99,6 +99,7 @@ class CartController extends Controller
             'payment_type' => $orderInfo->payment,
             'full_price' => $totalPrice,
             'is_paid' => 0,
+            'is_complite' => 0,
             'created_at' => $date,	
             'updated_at' => $date
         ]);
@@ -107,7 +108,9 @@ class CartController extends Controller
             DB::table('order_products')->insert([
                 'product_id' => $productId,
                 'count' => $count,
-                'order_id' => $orderId
+                'order_id' => $orderId,
+                'created_at' => $date,	
+                'updated_at' => $date
             ]);
         }
 

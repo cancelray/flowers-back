@@ -56,7 +56,7 @@ class CatalogController extends Controller
 
         if ($category->translate_name == 'bouquets') {
             $bouquets = Category::where('translate_name', 'bouquets')->get();
-            $roses = Category::where('translate_name', 'roses')->get();
+            $roses = Category::where('translate_name', 'rose-bouquets')->get();
 
             $products = Product::whereIn('category_id', [$bouquets[0]->id, $roses[0]->id])->paginate(9);;
 
@@ -98,7 +98,7 @@ class CatalogController extends Controller
 
         if ($category->translate_name == 'bouquets') {
             $bouquets = Category::where('translate_name', 'bouquets') -> get();
-            $roses = Category::where('translate_name', 'roses') -> get();
+            $roses = Category::where('translate_name', 'rose-bouquets') -> get();
 
             return $products = Product::whereIn('category_id', [$bouquets[0]->id, $roses[0]->id])->get();
         }

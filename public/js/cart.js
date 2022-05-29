@@ -4,7 +4,7 @@ const deleteFromCart = (click) => {
     const productId = click.target.dataset.id;
 
     let request = new XMLHttpRequest;
-    let url = "/flowers-laravel/public/cart/remove/" + productId;
+    let url = "/cart/remove/" + productId;
   
     request.addEventListener("readystatechange", () => {
         if (request.readyState === 4 && request.status === 200) {
@@ -20,7 +20,7 @@ const decrementInCart = (click) => {
     const productId = click.target.dataset.id;
 
     let request = new XMLHttpRequest;
-    let url = "/flowers-laravel/public/cart/decrement/" + productId;
+    let url = "/cart/decrement/" + productId;
   
     request.addEventListener("readystatechange", () => {
         if (request.readyState === 4 && request.status === 200) {
@@ -36,7 +36,7 @@ const incrementInCart = (click) => {
     const productId = click.target.dataset.id;
 
     let request = new XMLHttpRequest;
-    let url = "/flowers-laravel/public/cart/increment/" + productId;
+    let url = "/cart/increment/" + productId;
   
     request.addEventListener("readystatechange", () => {
         if (request.readyState === 4 && request.status === 200) {
@@ -67,7 +67,7 @@ async function getCart() {
     cartCheckout.removeEventListener('click', emptyCartBtn);
     cartCheckout.classList.remove('disabled-btn');
 
-    let products = await fetch('/flowers-laravel/public/cart/show/');
+    let products = await fetch('/cart/show/');
     let productsJson = await products.json();
 
     const inCartCount = document.querySelector('.in-cart-count');
@@ -87,7 +87,7 @@ async function getCart() {
             cartCheckout.classList.add('disabled-btn');
 
             const catalogLink = document.createElement('p');
-            catalogLink.innerHTML = `Сейчас ваша корзина пуста, но мы уверены, что в нашем <a style="color:#43ffd2" href="/flowers-laravel/public/catalog">каталоге</a> вы что нибудь найдете!`;
+            catalogLink.innerHTML = `Сейчас ваша корзина пуста, но мы уверены, что в нашем <a style="color:#43ffd2" href="/catalog">каталоге</a> вы что нибудь найдете!`;
             cartContents.appendChild(catalogLink);
         }
     });
@@ -97,7 +97,7 @@ async function getCart() {
         cartItem.classList.add('cart-item');
 
         const cartItemImg = document.createElement('img');
-        cartItemImg.src = '/flowers-laravel/public/' + productsJson[i]['img'];
+        cartItemImg.src = '/img/catalog/' + productsJson[i]['img'];
         cartItemImg.alt = productsJson[i]['translate_name'];
         cartItem.appendChild(cartItemImg);
 
@@ -162,7 +162,7 @@ async function getCart() {
             orderItem.classList.add('order-item');
     
             const orderItemImg = document.createElement('img');
-            orderItemImg.src = '/flowers-laravel/public/' + productsJson[i]['img'];
+            orderItemImg.src = '/img/catalog/' + productsJson[i]['img'];
             orderItemImg.alt = productsJson[i]['translate_name'];
             orderItem.appendChild(orderItemImg);
     

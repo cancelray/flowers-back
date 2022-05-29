@@ -10,6 +10,6 @@ class OrderProduct extends Model
     use HasFactory;
 
     protected $primaryKey = 'id';
-    protected $table = 'formats';
+    protected $table = 'order_products';
     protected $fillable  = ['product_id', 'count', 'order_id', 'created_at', 'updated_at'];
 }

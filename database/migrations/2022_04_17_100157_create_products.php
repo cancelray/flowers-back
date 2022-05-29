@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('translate_name');
             $table->decimal('price', 8, 2);
-            $table->int('category_id');
+            $table->integer('category_id');
             $table->string('composition');
-            $table->int('format_id');
-            $table->int('color_id');
+            $table->integer('format_id');
+            $table->integer('color_id');
             $table->string('img');
             $table->timestamps();
         });

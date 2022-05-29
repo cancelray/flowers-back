@@ -14,7 +14,7 @@ const customFormSubmit = async function(event) {
         const inputToken = document.querySelector('input[name="token"]');
         let token = inputToken.value;
         
-        let response = await fetch('/flowers-laravel/public/sendmail', {
+        let response = await fetch('/sendmail', {
             headers: {'X-CSRF-TOKEN': token},
             method: 'POST',
             body: values

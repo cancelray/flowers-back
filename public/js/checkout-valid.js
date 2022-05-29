@@ -21,12 +21,11 @@ const checkoutSubmit = async function(event) {
     showChekoutLoader();
 
     const orderInfoJson = JSON.stringify(orderInfo);
-    console.log(orderInfoJson);
 
     const inputToken = document.querySelector('input[name="checkout-token"]');
     let token = inputToken.value;
     
-    let response = await fetch('/flowers-laravel/public/cartCheckout', {
+    let response = await fetch('/cartCheckout', {
         headers: {'X-CSRF-TOKEN': token},
         method: 'POST',
         body: orderInfoJson

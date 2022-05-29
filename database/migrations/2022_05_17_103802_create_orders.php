@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('favorites', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('phone');
+			$table->string('email');
             $table->string('recipient_phone');
             $table->string('recipient_name');
             $table->text('comment');
@@ -30,6 +31,7 @@ return new class extends Migration
             $table->string('payment_type');
             $table->string('full_price');
             $table->boolean('is_paid');
+            $table->boolean('is_complite');
             $table->timestamps();
         });   
     }

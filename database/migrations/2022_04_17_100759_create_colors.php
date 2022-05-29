@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('colors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('color');
+            $table->string('for_checkbox');
             $table->timestamps();
         });
     }

@@ -3,9 +3,10 @@
 @section('page-title', 'Our Favorite Flowers - Catalog')
 
 @section('add-scripts')
+    <script defer src="{{ asset('/js/add-to-cart.js') }}"></script>
     <script defer src="{{ asset('/js/catalog.min.js') }}"></script>
-    <script defer src="{{ asset('/js/add-to-cart.min.js') }}"></script>
     <script defer src="{{ asset('/js/filter.js') }}"></script>
+    <script defer src="{{ asset('/js/section-change.js') }}"></script>
 @endsection
 
 
@@ -13,14 +14,14 @@
 
     <section class="catalog">
         <div class="container">
-            <h6><a href="{{ url('/') }}">Главная</a>&nbsp;/ каталог {{ $categoryName }}</h6>
+            <h6><a href="{{ url('/') }}">Главная</a>&nbsp;/ <a href="{{ url('/catalog') }}">каталог</a> {{ $categoryName }}</h6>
             <h2 class="catalog-h">каталог</h2>
             <h2 class="bouquets-h">букетов</h2>
             <p>В&nbsp;нашем магазине самый большой выбор букетов:</p>
             <div class="catalog-sections">
 
                 @foreach ($categories as $category)
-                    <div class="section-item">
+                    <div class="section-item" data-id="{{ $category->translate_name }}">
                         <a href="{{ url('/catalog') }}/{{ $category->translate_name }}">{{ $category->name }}</a>
                     </div>            
                 @endforeach
@@ -85,7 +86,7 @@
                         @foreach ($products as $product)
                             <div class="catalog-item">
                                 <a href="{{ url('/product') }}/{{ $product->translate_name }}">
-                                    <img src="{{ asset('/') }}/{{ $product->img }}" alt="{{ $product->translate_name }}">
+                                    <img src="{{ asset('/') }}img/catalog/{{ $product->img }}" alt="{{ $product->translate_name }}">
                                     <h4>{{ $product->name }}</h4>
                                     <h4 class="price">{{ $product->price }} &#8381</h4>
                                 </a>
