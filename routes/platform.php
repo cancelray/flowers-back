@@ -16,6 +16,14 @@ use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
 use App\Orchid\Screens\Products\ProductsScreen;
+use App\Orchid\Screens\Category\CategoriesScreen;
+use App\Orchid\Screens\Formats\FormatsScreen;
+use App\Orchid\Screens\Colors\ColorsScreen;
+use App\Orchid\Screens\Orders\OrdersScreen;
+use App\Orchid\Screens\CustomOrders\CustomOrdersScreen;
+
+
+
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 
@@ -100,5 +108,25 @@ Route::screen('roles', RoleListScreen::class)
 // Products
 Route::screen('products', ProductsScreen::class)
     ->name('platform.products');
+
+// Categories
+Route::screen('categories', CategoriesScreen::class)
+    ->name('platform.categories');
+
+// Formats
+Route::screen('formats', FormatsScreen::class)
+->name('platform.formats');
+
+// Colors
+Route::screen('colors', ColorsScreen::class)
+->name('platform.colors');
+
+// Orders
+Route::screen('orders', OrdersScreen::class)
+->name('platform.orders');
+
+// Custom Orders
+Route::screen('custom', CustomOrdersScreen::class)
+->name('platform.custom');
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');

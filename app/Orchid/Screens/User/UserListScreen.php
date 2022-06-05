@@ -40,7 +40,7 @@ class UserListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'User';
+        return 'Пользователи';
     }
 
     /**
@@ -120,7 +120,7 @@ class UserListScreen extends Screen
 
         $user->fill($request->input('user'))->save();
 
-        Toast::info(__('User was saved.'));
+        Toast::info(__('Пользователь сохранен'));
     }
 
     /**
@@ -130,6 +130,6 @@ class UserListScreen extends Screen
     {
         User::findOrFail($request->get('id'))->delete();
 
-        Toast::info(__('User was removed'));
+        Toast::info(__('Пользователь был удален'));
     }
 }

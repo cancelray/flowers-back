@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('translate_name');
             $table->decimal('price', 8, 2);
             $table->integer('category_id');
-            $table->string('composition');
+            $table->text('composition');
             $table->integer('format_id');
             $table->integer('color_id');
             $table->string('img');

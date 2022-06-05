@@ -28,27 +28,42 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
-            Menu::make(__('Продукты'))
+            Menu::make(__('Товары'))
                 ->icon('modules')
-                ->route('platform.products'),
+                ->route('platform.products')
+                ->title(__('Товары')),
+
+            Menu::make(__('Категории'))
+                ->icon('modules')
+                ->route('platform.categories'),
+
+            Menu::make(__('Форматы'))
+                ->icon('modules')
+                ->route('platform.formats'),
+
+            Menu::make(__('Цвета'))
+                ->icon('modules')
+                ->route('platform.colors'),
+
+            Menu::make(__('Заказы'))
+                ->icon('module')
+                ->route('platform.orders')
+                ->title(__('Заказы')),
+
+            Menu::make(__('Кастомные заказы'))
+                ->icon('module')
+                ->route('platform.custom'),
 
             Menu::make(__('Пользователи'))
                 ->icon('user')
                 ->route('platform.systems.users')
                 ->permission('platform.systems.users')
-                ->title(__('Access rights')),
+                ->title(__('Права доступа')),
 
             Menu::make(__('Роли'))
                 ->icon('lock')
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles'),
-
-            Menu::make('Dropdown menu')
-                ->icon('code')
-                ->list([
-                    Menu::make('Sub element item 1')->icon('bag'),
-                    Menu::make('Sub element item 2')->icon('heart'),
-                ]),
 
             // Menu::make('Basic Elements')
             //     ->title('Form controls')
