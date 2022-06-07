@@ -1,352 +1,820 @@
--- MariaDB dump 10.19  Distrib 10.4.24-MariaDB, for Win64 (AMD64)
---
--- Host: localhost    Database: new
--- ------------------------------------------------------
--- Server version	10.4.24-MariaDB
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script type="text/javascript" src="/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=DRrUeV3y0Sv7myWCvyS0pno2hVhhybBa7_mJjmWhfBlTyNb-bRX3Z-OwEEPp8MUp3qkGEAomBHnFRdlAvHQQA6D5uRPTUQxF_2KH_sCwNPk" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cDovL2xvY2FsaG9zdC9waHBteWFkbWluL2luZGV4LnBocD9yb3V0ZT0vZXhwb3J0"/><style id="cfs-style">html{display: none;}</style>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" type="text/css" href="./themes/pmahomme/jquery/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/lib/codemirror.css?v=5.1.3">
+    <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/hint/show-hint.css?v=5.1.3">
+    <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/lint/lint.css?v=5.1.3">
+    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/theme.css?v=5.1.3&nocache=3723155431ltr&server=1">
+    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/printview.css?v=5.1.3" media="print" id="printcss">
+    <title>localhost / 127.0.0.1 | phpMyAdmin 5.1.3</title>
+    <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.min.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery-migrate.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/sprintf.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/ajax.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/keyhandler.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/bootstrap/bootstrap.bundle.min.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery-ui.min.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/js.cookie.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.mousewheel.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.validate.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery-ui-timepicker-addon.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.ba-hashchange-2.0.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.debounce-1.0.6.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/menu_resizer.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/cross_framing_protection.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/rte.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/messages.php?l=ru&v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/config.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/doclinks.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/functions.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/navigation.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/indexes.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/common.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/page_settings.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/export_output.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/lib/codemirror.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/mode/sql/sql.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/addon/runmode/runmode.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/addon/hint/show-hint.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/addon/hint/sql-hint.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/addon/lint/lint.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/codemirror/addon/lint/sql-lint.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/tracekit.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/error_report.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/drag_drop_import.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/shortcuts_handler.js?v=5.1.3"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/console.js?v=5.1.3"></script>
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+<script data-cfasync="false" type="text/javascript">
+// <![CDATA[
+CommonParams.setAll({common_query:"",opendb_url:"index.php?route=/database/structure",lang:"ru",server:"1",table:"",db:"",token:"25413f284b6654776864284a7a376c55",text_dir:"ltr",show_databases_navigation_as_tree:true,pma_text_default_tab:"Обзор",pma_text_left_default_tab:"Структура",pma_text_left_default_tab2:false,LimitChars:"50",pftext:"",confirm:true,LoginCookieValidity:"1440",session_gc_maxlifetime:"1440",logged_in:true,is_https:false,rootPath:"/phpmyadmin/",arg_separator:"&",PMA_VERSION:"5.1.3",auth_type:"config",user:"root"});
+var firstDayOfCalendar = '0';
+var themeImagePath = '.\/themes\/pmahomme\/img\/';
+var mysqlDocTemplate = '.\/url.php\u003Furl\u003Dhttps\u00253A\u00252F\u00252Fdev.mysql.com\u00252Fdoc\u00252Frefman\u00252F8.0\u00252Fen\u00252F\u002525s.html';
+var maxInputVars = 1000;
 
---
--- Table structure for table `categories`
---
+if ($.datepicker) {
+  $.datepicker.regional[''].closeText = '\u0413\u043E\u0442\u043E\u0432\u043E';
+  $.datepicker.regional[''].prevText = '\u041F\u0440\u0435\u0434';
+  $.datepicker.regional[''].nextText = '\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439';
+  $.datepicker.regional[''].currentText = '\u0421\u0435\u0433\u043E\u0434\u043D\u044F';
+  $.datepicker.regional[''].monthNames = [
+    '\u042F\u043D\u0432\u0430\u0440\u044C',
+    '\u0424\u0435\u0432\u0440\u0430\u043B\u044C',
+    '\u041C\u0430\u0440\u0442',
+    '\u0410\u043F\u0440\u0435\u043B\u044C',
+    '\u041C\u0430\u0439',
+    '\u0418\u044E\u043D\u044C',
+    '\u0418\u044E\u043B\u044C',
+    '\u0410\u0432\u0433\u0443\u0441\u0442',
+    '\u0421\u0435\u043D\u0442\u044F\u0431\u0440\u044C',
+    '\u041E\u043A\u0442\u044F\u0431\u0440\u044C',
+    '\u041D\u043E\u044F\u0431\u0440\u044C',
+    '\u0414\u0435\u043A\u0430\u0431\u0440\u044C',
+  ];
+  $.datepicker.regional[''].monthNamesShort = [
+    '\u042F\u043D\u0432',
+    '\u0424\u0435\u0432',
+    '\u041C\u0430\u0440',
+    '\u0410\u043F\u0440',
+    '\u041C\u0430\u0439',
+    '\u0418\u044E\u043D',
+    '\u0418\u044E\u043B',
+    '\u0410\u0432\u0433',
+    '\u0421\u0435\u043D',
+    '\u041E\u043A\u0442',
+    '\u041D\u043E\u044F',
+    '\u0414\u0435\u043A',
+  ];
+  $.datepicker.regional[''].dayNames = [
+    '\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u0435\u043D\u044C\u0435',
+    '\u041F\u043E\u043D\u0435\u0434\u0435\u043B\u044C\u043D\u0438\u043A',
+    '\u0412\u0442\u043E\u0440\u043D\u0438\u043A',
+    '\u0421\u0440\u0435\u0434\u0430',
+    '\u0427\u0435\u0442\u0432\u0435\u0440\u0433',
+    '\u041F\u044F\u0442\u043D\u0438\u0446\u0430',
+    '\u0421\u0443\u0431\u0431\u043E\u0442\u0430',
+  ];
+  $.datepicker.regional[''].dayNamesShort = [
+    '\u0412\u0441',
+    '\u041F\u043D',
+    '\u0412\u0442',
+    '\u0421\u0440',
+    '\u0427\u0442',
+    '\u041F\u0442',
+    '\u0421\u0431',
+  ];
+  $.datepicker.regional[''].dayNamesMin = [
+    '\u0412\u0441',
+    '\u041F\u043D',
+    '\u0412\u0442',
+    '\u0421\u0440',
+    '\u0427\u0442',
+    '\u041F\u0442',
+    '\u0421\u0431',
+  ];
+  $.datepicker.regional[''].weekHeader = '\u041D\u0435\u0434.';
+  $.datepicker.regional[''].showMonthAfterYear = true;
+  $.datepicker.regional[''].yearSuffix = '';
+  $.extend($.datepicker._defaults, $.datepicker.regional['']);
+}
 
-DROP TABLE IF EXISTS `categories`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `categories` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `translate_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+if ($.timepicker) {
+  $.timepicker.regional[''].timeText = '\u0412\u0440\u0435\u043C\u044F';
+  $.timepicker.regional[''].hourText = '\u0427\u0430\u0441';
+  $.timepicker.regional[''].minuteText = '\u041C\u0438\u043D\u0443\u0442\u0430';
+  $.timepicker.regional[''].secondText = '\u0421\u0435\u043A\u0443\u043D\u0434\u0430';
+  $.extend($.timepicker._defaults, $.timepicker.regional['']);
+}
 
---
--- Dumping data for table `categories`
---
+function extendingValidatorMessages () {
+  $.extend($.validator.messages, {
+    required: '\u042D\u0442\u043E\u0020\u043F\u043E\u043B\u0435\u0020\u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E',
+    remote: '\u0418\u0441\u043F\u0440\u0430\u0432\u044C\u0442\u0435\u0020\u044D\u0442\u043E\u0020\u043F\u043E\u043B\u0435',
+    email: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439\u0020\u0430\u0434\u0440\u0435\u0441\u0020\u044D\u002D\u043F\u043E\u0447\u0442\u044B',
+    url: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439\u0020URL',
+    date: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0443\u044E\u0020\u0434\u0430\u0442\u0443',
+    dateISO: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0443\u044E\u0020\u0434\u0430\u0442\u0443\u0020\u0028ISO\u0029',
+    number: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0435\u0020\u0447\u0438\u0441\u043B\u043E\u0432\u043E\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435',
+    creditcard: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439\u0020\u043D\u043E\u043C\u0435\u0440\u0020\u043A\u0440\u0435\u0434\u0438\u0442\u043D\u043E\u0439\u0020\u043A\u0430\u0440\u0442\u044B',
+    digits: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0442\u043E\u043B\u044C\u043A\u043E\u0020\u0446\u0438\u0444\u0440\u044B',
+    equalTo: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0442\u043E\u0020\u0436\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\u0020\u0435\u0449\u0435\u0020\u0440\u0430\u0437',
+    maxlength: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043D\u0435\u0020\u0431\u043E\u043B\u0435\u0435\u0020\u007B0\u007D\u0020\u0441\u0438\u043C\u0432\u043E\u043B\u0028\u0430\/\u043E\u0432\u0029'),
+    minlength: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043D\u0435\u0020\u043C\u0435\u043D\u0435\u0435\u0020\u007B0\u007D\u0020\u0441\u0438\u043C\u0432\u043E\u043B\u0028\u0430\/\u043E\u0432\u0029'),
+    rangelength: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\u0020\u043C\u0435\u0436\u0434\u0443\u0020\u007B0\u007D\u0020\u0438\u0020\u007B1\u007D\u0020\u0441\u0438\u043C\u0432\u043E\u043B\u0430\u043C\u0438\u0020\u0434\u043B\u0438\u043D\u043E\u0439'),
+    range: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\u0020\u043C\u0435\u0436\u0434\u0443\u0020\u007B0\u007D\u0020\u0438\u0020\u007B1\u007D\u0020\u0441\u0438\u043C\u0432\u043E\u043B\u0430\u043C\u0438'),
+    max: $.validator.format('\u0412\u0432\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\u0020\u043C\u0435\u043D\u044C\u0448\u0435\u0435\u0020\u0438\u043B\u0438\u0020\u0440\u0430\u0432\u043D\u043E\u0435\u0020\u007B0\u007D'),
+    min: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435,\u0020\u0431\u043E\u043B\u044C\u0448\u0435\u0435\u0020\u0438\u043B\u0438\u0020\u0440\u0430\u0432\u043D\u043E\u0435\u0020\u007B0\u007D'),
+    validationFunctionForDateTime: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0443\u044E\u0020\u0434\u0430\u0442\u0443\u0020\u0438\u043B\u0438\u0020\u0432\u0440\u0435\u043C\u044F'),
+    validationFunctionForHex: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\u0020HEX'),
+    validationFunctionForMd5: $.validator.format('This\u0020column\u0020can\u0020not\u0020contain\u0020a\u002032\u0020chars\u0020value'),
+    validationFunctionForAesDesEncrypt: $.validator.format('These\u0020functions\u0020are\u0020meant\u0020to\u0020return\u0020a\u0020binary\u0020result\u003B\u0020to\u0020avoid\u0020inconsistent\u0020results\u0020you\u0020should\u0020store\u0020it\u0020in\u0020a\u0020BINARY,\u0020VARBINARY,\u0020or\u0020BLOB\u0020column.')
+  });
+}
 
-LOCK TABLES `categories` WRITE;
-/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Популярное','popular',NULL,NULL),(2,'Композиции','compositions',NULL,NULL),(3,'Сухоцветы','dried-flowers',NULL,NULL),(4,'Букеты','bouquets',NULL,NULL),(5,'Букеты роз','rose-bouquets',NULL,NULL),(6,'Комнатные растения','houseplants',NULL,NULL),(7,'Воздушные шары','holiday-balls',NULL,NULL),(8,'Конверты','envelopes',NULL,NULL),(9,'Открытки','postcards',NULL,NULL),(10,'Искусственные цветы','artificial',NULL,NULL);
-/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
-UNLOCK TABLES;
+ConsoleEnterExecutes=false
 
---
--- Table structure for table `colors`
---
+AJAX.scriptHandler
+  .add('vendor/jquery/jquery.min.js', 0)
+  .add('vendor/jquery/jquery-migrate.js', 0)
+  .add('vendor/sprintf.js', 1)
+  .add('ajax.js', 0)
+  .add('keyhandler.js', 1)
+  .add('vendor/bootstrap/bootstrap.bundle.min.js', 1)
+  .add('vendor/jquery/jquery-ui.min.js', 0)
+  .add('vendor/js.cookie.js', 1)
+  .add('vendor/jquery/jquery.mousewheel.js', 0)
+  .add('vendor/jquery/jquery.validate.js', 0)
+  .add('vendor/jquery/jquery-ui-timepicker-addon.js', 0)
+  .add('vendor/jquery/jquery.ba-hashchange-2.0.js', 0)
+  .add('vendor/jquery/jquery.debounce-1.0.6.js', 0)
+  .add('menu_resizer.js', 1)
+  .add('cross_framing_protection.js', 0)
+  .add('rte.js', 1)
+  .add('messages.php', 0)
+  .add('config.js', 1)
+  .add('doclinks.js', 1)
+  .add('functions.js', 1)
+  .add('navigation.js', 1)
+  .add('indexes.js', 1)
+  .add('common.js', 1)
+  .add('page_settings.js', 1)
+  .add('export_output.js', 1)
+  .add('vendor/codemirror/lib/codemirror.js', 0)
+  .add('vendor/codemirror/mode/sql/sql.js', 0)
+  .add('vendor/codemirror/addon/runmode/runmode.js', 0)
+  .add('vendor/codemirror/addon/hint/show-hint.js', 0)
+  .add('vendor/codemirror/addon/hint/sql-hint.js', 0)
+  .add('vendor/codemirror/addon/lint/lint.js', 0)
+  .add('codemirror/addon/lint/sql-lint.js', 0)
+  .add('vendor/tracekit.js', 1)
+  .add('error_report.js', 1)
+  .add('drag_drop_import.js', 1)
+  .add('shortcuts_handler.js', 1)
+  .add('console.js', 1)
+;
+$(function() {
+        AJAX.fireOnload('vendor/sprintf.js');
+        AJAX.fireOnload('keyhandler.js');
+      AJAX.fireOnload('vendor/bootstrap/bootstrap.bundle.min.js');
+        AJAX.fireOnload('vendor/js.cookie.js');
+                AJAX.fireOnload('menu_resizer.js');
+        AJAX.fireOnload('rte.js');
+        AJAX.fireOnload('config.js');
+      AJAX.fireOnload('doclinks.js');
+      AJAX.fireOnload('functions.js');
+      AJAX.fireOnload('navigation.js');
+      AJAX.fireOnload('indexes.js');
+      AJAX.fireOnload('common.js');
+      AJAX.fireOnload('page_settings.js');
+      AJAX.fireOnload('export_output.js');
+                    AJAX.fireOnload('vendor/tracekit.js');
+      AJAX.fireOnload('error_report.js');
+      AJAX.fireOnload('drag_drop_import.js');
+      AJAX.fireOnload('shortcuts_handler.js');
+      AJAX.fireOnload('console.js');
+  });
+// ]]>
+</script>
 
-DROP TABLE IF EXISTS `colors`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `colors` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `color` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `for_checkbox` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  <noscript><style>html{display:block}</style></noscript>
+</head>
+<body>
+    <div id="pma_navigation" data-config-navigation-width="240">
+    <div id="pma_navigation_resizer"></div>
+    <div id="pma_navigation_collapser"></div>
+    <div id="pma_navigation_content">
+      <div id="pma_navigation_header">
 
---
--- Dumping data for table `colors`
---
+                  <div id="pmalogo">
+                          <a href="index.php">
+                                      <img id="imgpmalogo" src="./themes/pmahomme/img/logo_left.png" alt="phpMyAdmin">
+                                      </a>
+                      </div>
+        
+        <div id="navipanellinks">
+          <a href="index.php?route=/" title="На главную"><img src="themes/dot.gif" title="На главную" alt="На главную" class="icon ic_b_home"></a>
 
-LOCK TABLES `colors` WRITE;
-/*!40000 ALTER TABLE `colors` DISABLE KEYS */;
-INSERT INTO `colors` VALUES (1,'Белый','white',NULL,NULL),(2,'Желтый','yellow',NULL,NULL),(3,'Зеленый','green',NULL,NULL),(4,'Красный','red',NULL,NULL),(5,'Оранжевый','orange',NULL,NULL),(6,'Розовый','pink',NULL,NULL),(7,'Синий','blue',NULL,NULL),(8,'Микс','mix',NULL,NULL);
-/*!40000 ALTER TABLE `colors` ENABLE KEYS */;
-UNLOCK TABLES;
+                      <a class="logout disableAjax" href="index.php?route=/logout" title="Пустые данные сеанса"><img src="themes/dot.gif" title="Пустые данные сеанса" alt="Пустые данные сеанса" class="icon ic_s_loggoff"></a>
+          
+          <a href="./doc/html/index.html" title="Документация phpMyAdmin" target="_blank" rel="noopener noreferrer"><img src="themes/dot.gif" title="Документация phpMyAdmin" alt="Документация phpMyAdmin" class="icon ic_b_docs"></a>
 
---
--- Table structure for table `favorites`
---
+          <a href="./url.php?url=https%3A%2F%2Fmariadb.com%2Fkb%2Fen%2Fdocumentation%2F" title="Документация MariaDB" target="_blank" rel="noopener noreferrer"><img src="themes/dot.gif" title="Документация MariaDB" alt="Документация MariaDB" class="icon ic_b_sqlhelp"></a>
 
-DROP TABLE IF EXISTS `favorites`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `favorites` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `product_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+          <a id="pma_navigation_settings_icon" href="#" title="Настройки панели навигации"><img src="themes/dot.gif" title="Настройки панели навигации" alt="Настройки панели навигации" class="icon ic_s_cog"></a>
 
---
--- Dumping data for table `favorites`
---
+          <a id="pma_navigation_reload" href="#" title="Обновить панель навигации"><img src="themes/dot.gif" title="Обновить панель навигации" alt="Обновить панель навигации" class="icon ic_s_reload"></a>
+        </div>
 
-LOCK TABLES `favorites` WRITE;
-/*!40000 ALTER TABLE `favorites` DISABLE KEYS */;
-INSERT INTO `favorites` VALUES (1,'10',NULL,NULL),(2,'7',NULL,NULL),(3,'22',NULL,NULL),(4,'5',NULL,NULL),(5,'9',NULL,NULL),(6,'29',NULL,NULL);
-/*!40000 ALTER TABLE `favorites` ENABLE KEYS */;
-UNLOCK TABLES;
+        
+        <img src="themes/dot.gif" title="Загрузка…" alt="Загрузка…" style="visibility: hidden; display:none" class="icon ic_ajax_clock_small throbber">
+      </div>
+      <div id="pma_navigation_tree" class="list_container synced highlight autoexpand">
 
---
--- Table structure for table `formats`
---
+  <div class="pma_quick_warp"><div class="drop_list"><button title="Недавние таблицы" class="drop_button btn">Недавнее</button><ul id="pma_recent_list"><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=flowers&table=order_products">`flowers`.`order_products`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=flowers&table=orders">`flowers`.`orders`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=flowers&table=products">`flowers`.`products`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=flowers&table=custom">`flowers`.`custom`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=flowers&table=colors">`flowers`.`colors`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=flowers&table=formats">`flowers`.`formats`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=flowers&table=categories">`flowers`.`categories`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=flowers&table=attachments">`flowers`.`attachments`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=flowers&table=attachmentable">`flowers`.`attachmentable`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=flowers&table=old_roles">`flowers`.`old_roles`</a></li></ul></div><div class="drop_list"><button title="Избранные таблицы" class="drop_button btn">Избранное</button><ul id="pma_favorite_list"><li class="warp_link">Нет избранных таблиц.</li></ul></div><div class="clearfloat"></div></div>
 
-DROP TABLE IF EXISTS `formats`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `formats` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `format` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `for_checkbox` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+<div class="clearfloat"></div>
 
---
--- Dumping data for table `formats`
---
+<ul>
+  
+  <!-- CONTROLS START --><li id="navigation_controls_outer"><div id="navigation_controls"><a href="#" id="pma_navigation_collapse" title="Свернуть все"><img src="themes/dot.gif" title="Свернуть все" alt="Свернуть все" class="icon ic_s_collapseall"></a><a href="#" id="pma_navigation_sync" title="Отсоединить от основной панели"><img src="themes/dot.gif" title="Отсоединить от основной панели" alt="Отсоединить от основной панели" class="icon ic_s_link"></a></div></li><!-- CONTROLS ENDS -->
+</ul>
 
-LOCK TABLES `formats` WRITE;
-/*!40000 ALTER TABLE `formats` DISABLE KEYS */;
-INSERT INTO `formats` VALUES (1,'Букет','bouquet',NULL,NULL),(2,'В вазе','in-vase',NULL,NULL),(3,'В конверте','in-envelope',NULL,NULL),(4,'В корзине','in-basket',NULL,NULL),(5,'В коробке','in-box',NULL,NULL),(6,'Клош','klosh',NULL,NULL),(7,'В горшке','in-pot',NULL,NULL);
-/*!40000 ALTER TABLE `formats` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `menus`
---
 
-DROP TABLE IF EXISTS `menus`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `menus` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `menus_name_unique` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+<div id='pma_navigation_tree_content'>
+  <ul>
+    <li class="first new_database italics"><div class='block'><i class='first'></i></div><div class="block second"><a href='index.php?route=/server/databases&server=1'><img src="themes/dot.gif" title="" alt="" class="icon ic_b_newdb"></a></div><a class='hover_show_full' href='index.php?route=/server/databases&server=1' title='Создать БД'>Создать БД</a><div class="clearfloat"></div></li><li class="database"><div class='block'><i></i><b></b><a class="expander" href='#'><span class="hide paths_nav" data-apath="cm9vdA==.YnVzaW5lc3M=" data-vpath="cm9vdA==.YnVzaW5lc3M=" data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><div class="block second"><a href='index.php?route=/database/operations&amp;server=1&amp;db=business&amp;'><img src="themes/dot.gif" title="Операции с базой данных" alt="Операции с базой данных" class="icon ic_s_db"></a></div><a class='hover_show_full' href='index.php?route=/database/structure&server=1&amp;db=business' title='Структура'>business</a><div class="clearfloat"></div></li><li class="database"><div class='block'><i></i><b></b><a class="expander" href='#'><span class="hide paths_nav" data-apath="cm9vdA==.Zmxvd2Vycw==" data-vpath="cm9vdA==.Zmxvd2Vycw==" data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><div class="block second"><a href='index.php?route=/database/operations&amp;server=1&amp;db=flowers&amp;'><img src="themes/dot.gif" title="Операции с базой данных" alt="Операции с базой данных" class="icon ic_s_db"></a></div><a class='hover_show_full' href='index.php?route=/database/structure&server=1&amp;db=flowers' title='Структура'>flowers</a><div class="clearfloat"></div></li><li class="database"><div class='block'><i></i><b></b><a class="expander" href='#'><span class="hide paths_nav" data-apath="cm9vdA==.aW5mb3JtYXRpb25fc2NoZW1h" data-vpath="cm9vdA==.aW5mb3JtYXRpb25fc2NoZW1h" data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><div class="block second"><a href='index.php?route=/database/operations&amp;server=1&amp;db=information_schema&amp;'><img src="themes/dot.gif" title="Операции с базой данных" alt="Операции с базой данных" class="icon ic_s_db"></a></div><a class='hover_show_full' href='index.php?route=/database/structure&server=1&amp;db=information_schema' title='Структура'>information_schema</a><div class="clearfloat"></div></li><li class="database"><div class='block'><i></i><b></b><a class="expander" href='#'><span class="hide paths_nav" data-apath="cm9vdA==.bXlzcWw=" data-vpath="cm9vdA==.bXlzcWw=" data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><div class="block second"><a href='index.php?route=/database/operations&amp;server=1&amp;db=mysql&amp;'><img src="themes/dot.gif" title="Операции с базой данных" alt="Операции с базой данных" class="icon ic_s_db"></a></div><a class='hover_show_full' href='index.php?route=/database/structure&server=1&amp;db=mysql' title='Структура'>mysql</a><div class="clearfloat"></div></li><li class="navGroup"><div class='block'><i></i><b></b><a class="expander loaded container" href='#'><span class="hide paths_nav" data-apath="cm9vdA==" data-vpath="cm9vdA==.bmV3" data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><i><div class="block second"><u><img src="themes/dot.gif" title="Группы" alt="Группы" class="icon ic_b_group"></u></div>&nbsp;new</i><div class="clearfloat"></div><div style='display: none;' class='list_container'><ul><li class="database database"><div class='block'><i></i><b></b><a class="expander" href='#'><span class="hide paths_nav" data-apath="cm9vdA==.bmV3" data-vpath="cm9vdA==.bmV3." data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><div class="block second"><a href='index.php?route=/database/operations&amp;server=1&amp;db=new&amp;'><img src="themes/dot.gif" title="Операции с базой данных" alt="Операции с базой данных" class="icon ic_s_db"></a></div><a class='hover_show_full' href='index.php?route=/database/structure&server=1&amp;db=new' title='Структура'>new</a><div class="clearfloat"></div></li><li class="database last database"><div class='block'><i></i><a class="expander" href='#'><span class="hide paths_nav" data-apath="cm9vdA==.bmV3X3Rlc3Q=" data-vpath="cm9vdA==.bmV3.dGVzdA==" data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><div class="block second"><a href='index.php?route=/database/operations&amp;server=1&amp;db=new_test&amp;'><img src="themes/dot.gif" title="Операции с базой данных" alt="Операции с базой данных" class="icon ic_s_db"></a></div><a class='hover_show_full' href='index.php?route=/database/structure&server=1&amp;db=new_test' title='Структура'>new_test</a><div class="clearfloat"></div></li></ul></div></li><li class="database"><div class='block'><i></i><b></b><a class="expander" href='#'><span class="hide paths_nav" data-apath="cm9vdA==.cGVyZm9ybWFuY2Vfc2NoZW1h" data-vpath="cm9vdA==.cGVyZm9ybWFuY2Vfc2NoZW1h" data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><div class="block second"><a href='index.php?route=/database/operations&amp;server=1&amp;db=performance_schema&amp;'><img src="themes/dot.gif" title="Операции с базой данных" alt="Операции с базой данных" class="icon ic_s_db"></a></div><a class='hover_show_full' href='index.php?route=/database/structure&server=1&amp;db=performance_schema' title='Структура'>performance_schema</a><div class="clearfloat"></div></li><li class="database"><div class='block'><i></i><b></b><a class="expander" href='#'><span class="hide paths_nav" data-apath="cm9vdA==.cGhwbXlhZG1pbg==" data-vpath="cm9vdA==.cGhwbXlhZG1pbg==" data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><div class="block second"><a href='index.php?route=/database/operations&amp;server=1&amp;db=phpmyadmin&amp;'><img src="themes/dot.gif" title="Операции с базой данных" alt="Операции с базой данных" class="icon ic_s_db"></a></div><a class='hover_show_full' href='index.php?route=/database/structure&server=1&amp;db=phpmyadmin' title='Структура'>phpmyadmin</a><div class="clearfloat"></div></li><li class="database"><div class='block'><i></i><b></b><a class="expander" href='#'><span class="hide paths_nav" data-apath="cm9vdA==.dGVzdA==" data-vpath="cm9vdA==.dGVzdA==" data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><div class="block second"><a href='index.php?route=/database/operations&amp;server=1&amp;db=test&amp;'><img src="themes/dot.gif" title="Операции с базой данных" alt="Операции с базой данных" class="icon ic_s_db"></a></div><a class='hover_show_full' href='index.php?route=/database/structure&server=1&amp;db=test' title='Структура'>test</a><div class="clearfloat"></div></li><li class="database"><div class='block'><i></i><b></b><a class="expander" href='#'><span class="hide paths_nav" data-apath="cm9vdA==.dGVzdDI=" data-vpath="cm9vdA==.dGVzdDI=" data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><div class="block second"><a href='index.php?route=/database/operations&amp;server=1&amp;db=test2&amp;'><img src="themes/dot.gif" title="Операции с базой данных" alt="Операции с базой данных" class="icon ic_s_db"></a></div><a class='hover_show_full' href='index.php?route=/database/structure&server=1&amp;db=test2' title='Структура'>test2</a><div class="clearfloat"></div></li><li class="last database"><div class='block'><i></i><a class="expander" href='#'><span class="hide paths_nav" data-apath="cm9vdA==.dGVzdDM=" data-vpath="cm9vdA==.dGVzdDM=" data-pos="0"></span><img src="themes/dot.gif" title="Развернуть/Свернуть" alt="Развернуть/Свернуть" class="icon ic_b_plus"></a></div><div class="block second"><a href='index.php?route=/database/operations&amp;server=1&amp;db=test3&amp;'><img src="themes/dot.gif" title="Операции с базой данных" alt="Операции с базой данных" class="icon ic_s_db"></a></div><a class='hover_show_full' href='index.php?route=/database/structure&server=1&amp;db=test3' title='Структура'>test3</a><div class="clearfloat"></div></li>
+  </ul>
+</div>
 
---
--- Dumping data for table `menus`
---
 
-LOCK TABLES `menus` WRITE;
-/*!40000 ALTER TABLE `menus` DISABLE KEYS */;
-/*!40000 ALTER TABLE `menus` ENABLE KEYS */;
-UNLOCK TABLES;
+      </div>
 
---
--- Table structure for table `old_roles`
---
+      <div id="pma_navi_settings_container">
+                  <div id="pma_navigation_settings"><div class="page_settings"><form method="post" action="index.php&#x3F;route&#x3D;&#x25;2Fexport&amp;server&#x3D;1" class="config-form disableAjax">
+  <input type="hidden" name="tab_hash" value="">
+      <input type="hidden" name="check_page_refresh" id="check_page_refresh" value="">
+    <input type="hidden" name="token" value="25413f284b6654776864284a7a376c55">
+  <input type="hidden" name="submit_save" value="Navi">
+<ul class="tabs responsivetable row">
+      <li><a href="#Navi_panel">Панель навигации</a></li>
+      <li><a href="#Navi_tree">Дерево навигации</a></li>
+      <li><a href="#Navi_servers">Сервера</a></li>
+      <li><a href="#Navi_databases">Базы данных</a></li>
+      <li><a href="#Navi_tables">Таблицы</a></li>
+  </ul>
+<div class="tabs_contents col">
+<fieldset class="optbox" id="Navi_panel">
+<legend>Панель навигации</legend>
+    <p>Настроить вид панели навигации.</p>
+<table class="pma-table" width="100%" cellspacing="0">
+<tr><th><label for="ShowDatabasesNavigationAsTree">Показать навигацию по базам данных в виде дерева</label><span class="doc"><a href="./doc/html/config.html#cfg_ShowDatabasesNavigationAsTree" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>В панели навигации заменяет дерево базы данных селектором</small></th><td><span class="checkbox"><input type="checkbox" name="ShowDatabasesNavigationAsTree" id="ShowDatabasesNavigationAsTree" checked="checked"></span><a class="restore-default hide" href="#ShowDatabasesNavigationAsTree" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationLinkWithMainPanel">Связать с главной панелью</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationLinkWithMainPanel" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Связать с главной панелью, выделив текущую базу данных или таблицу.</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationLinkWithMainPanel" id="NavigationLinkWithMainPanel" checked="checked"></span><a class="restore-default hide" href="#NavigationLinkWithMainPanel" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationDisplayLogo">Показывать логотип</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationDisplayLogo" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Отображать логотип в панели навигации.</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationDisplayLogo" id="NavigationDisplayLogo" checked="checked"></span><a class="restore-default hide" href="#NavigationDisplayLogo" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationLogoLink">Ссылка логотипа</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationLogoLink" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>URL, на который будет ссылаться логотип в панели навигации.</small></th><td><input type="text" class="w-75" name="NavigationLogoLink" id="NavigationLogoLink" value="index.php"><a class="restore-default hide" href="#NavigationLogoLink" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationLogoLinkWindow">Цель ссылки логотипа</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationLogoLinkWindow" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Открывать ссылку в основном окне (<code>main</code>) или в новом (<code>new</code>).</small></th><td><select class="w-75" name="NavigationLogoLinkWindow" id="NavigationLogoLinkWindow"><option value="main" selected="selected">main</option><option value="new">new</option></select><a class="restore-default hide" href="#NavigationLogoLinkWindow" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreePointerEnable">Включить подсветку</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreePointerEnable" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Подсвечивать сервер при наведении курсора.</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreePointerEnable" id="NavigationTreePointerEnable" checked="checked"></span><a class="restore-default hide" href="#NavigationTreePointerEnable" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="FirstLevelNavigationItems">Максимальное количество пунктов на первом уровне</label><span class="doc"><a href="./doc/html/config.html#cfg_FirstLevelNavigationItems" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Количество пунктов, выводимых на одной странице первого уровня дерева навигации.</small></th><td><input type="number" name="FirstLevelNavigationItems" id="FirstLevelNavigationItems" value="100"><a class="restore-default hide" href="#FirstLevelNavigationItems" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeDisplayItemFilterMinimum">Минимальное количество пунктов для вывода поля фильтра</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeDisplayItemFilterMinimum" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Определяет минимальное количество пунктов (таблиц, представлений, функций и событий) для вывода поля фильтра.</small></th><td><input type="number" name="NavigationTreeDisplayItemFilterMinimum" id="NavigationTreeDisplayItemFilterMinimum" value="30"><a class="restore-default hide" href="#NavigationTreeDisplayItemFilterMinimum" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NumRecentTables">Недавно использованные таблицы</label><span class="doc"><a href="./doc/html/config.html#cfg_NumRecentTables" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Максимальное количество недавно использованных таблиц; для отключения установите в 0.</small></th><td><input type="number" name="NumRecentTables" id="NumRecentTables" value="10"><a class="restore-default hide" href="#NumRecentTables" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NumFavoriteTables">Избранные таблицы</label><span class="doc"><a href="./doc/html/config.html#cfg_NumFavoriteTables" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Максимальное количество избранных таблиц; для отключения установите в 0.</small></th><td><input type="number" name="NumFavoriteTables" id="NumFavoriteTables" value="10"><a class="restore-default hide" href="#NumFavoriteTables" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationWidth">Ширина панели навигации</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationWidth" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Установите 0, чтобы свернуть панель навигации.</small></th><td><input type="number" name="NavigationWidth" id="NavigationWidth" value="240"><a class="restore-default hide" href="#NavigationWidth" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr></table>
+</fieldset>
+<fieldset class="optbox" id="Navi_tree">
+<legend>Дерево навигации</legend>
+    <p>Модифицировать дерево навигации.</p>
+<table class="pma-table" width="100%" cellspacing="0">
+<tr><th><label for="MaxNavigationItems">Максимальное количество пунктов в ветке</label><span class="doc"><a href="./doc/html/config.html#cfg_MaxNavigationItems" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Количество пунктов, выводимых на одной странице дерева навигации.</small></th><td><input type="number" name="MaxNavigationItems" id="MaxNavigationItems" value="50"><a class="restore-default hide" href="#MaxNavigationItems" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeEnableGrouping">Группировать пункты в дереве</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeEnableGrouping" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Группировать пункты в дереве навигации (определяется разделителем, указанным в закладках баз данных и таблиц сверху).</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeEnableGrouping" id="NavigationTreeEnableGrouping" checked="checked"></span><a class="restore-default hide" href="#NavigationTreeEnableGrouping" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeEnableExpansion">Включить раскрытие навигационного дерева</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeEnableExpansion" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Следует ли предлагать возможность раскрытия дерева в панели навигации.</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeEnableExpansion" id="NavigationTreeEnableExpansion" checked="checked"></span><a class="restore-default hide" href="#NavigationTreeEnableExpansion" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeShowTables">Отображение таблиц в дереве</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeShowTables" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Следует ли отображать таблицы под базой данных в дереве навигации</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeShowTables" id="NavigationTreeShowTables" checked="checked"></span><a class="restore-default hide" href="#NavigationTreeShowTables" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeShowViews">Показать представления в дереве</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeShowViews" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Стоит ли отображать представления под базой данных в дереве навигации</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeShowViews" id="NavigationTreeShowViews" checked="checked"></span><a class="restore-default hide" href="#NavigationTreeShowViews" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeShowFunctions">Отображать функции в дереве</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeShowFunctions" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Стоит ли отображать функции под базой данный в навигационном дереве</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeShowFunctions" id="NavigationTreeShowFunctions" checked="checked"></span><a class="restore-default hide" href="#NavigationTreeShowFunctions" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeShowProcedures">Отображать процедуры в дереве</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeShowProcedures" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Стоит ли отображать процедуры под базой данный в навигационном дереве</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeShowProcedures" id="NavigationTreeShowProcedures" checked="checked"></span><a class="restore-default hide" href="#NavigationTreeShowProcedures" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeShowEvents">Отображать события в дереве</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeShowEvents" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Стоит ли отображать события под базой данных в дереве навигации</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeShowEvents" id="NavigationTreeShowEvents" checked="checked"></span><a class="restore-default hide" href="#NavigationTreeShowEvents" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeAutoexpandSingleDb">Развернуть одиночную базу данных</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeAutoexpandSingleDb" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Стоит ли разворачивать автоматически одиночную базу данных в дереве навигации.</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationTreeAutoexpandSingleDb" id="NavigationTreeAutoexpandSingleDb" checked="checked"></span><a class="restore-default hide" href="#NavigationTreeAutoexpandSingleDb" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr></table>
+</fieldset>
+<fieldset class="optbox" id="Navi_servers">
+<legend>Сервера</legend>
+    <p>Параметры отображения списка серверов.</p>
+<table class="pma-table" width="100%" cellspacing="0">
+<tr><th><label for="NavigationDisplayServers">Отображать выбор сервера</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationDisplayServers" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Отображать в верхней части панели навигации список серверов.</small></th><td><span class="checkbox"><input type="checkbox" name="NavigationDisplayServers" id="NavigationDisplayServers" checked="checked"></span><a class="restore-default hide" href="#NavigationDisplayServers" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="DisplayServersList">Выводить серверы списком</label><span class="doc"><a href="./doc/html/config.html#cfg_DisplayServersList" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Выводить доступные для выбора серверы в виде последовательного списка вместо выпадающего.</small></th><td><span class="checkbox"><input type="checkbox" name="DisplayServersList" id="DisplayServersList"></span><a class="restore-default hide" href="#DisplayServersList" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr></table>
+</fieldset>
+<fieldset class="optbox" id="Navi_databases">
+<legend>Базы данных</legend>
+    <p>Параметры отображения списка баз данных.</p>
+<table class="pma-table" width="100%" cellspacing="0">
+<tr><th><label for="NavigationTreeDisplayDbFilterMinimum">Минимальное количество баз данных для отображения поля фильтра</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeDisplayDbFilterMinimum" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span></th><td><input type="number" name="NavigationTreeDisplayDbFilterMinimum" id="NavigationTreeDisplayDbFilterMinimum" value="30"><a class="restore-default hide" href="#NavigationTreeDisplayDbFilterMinimum" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeDbSeparator">Разделитель дерева баз данных</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeDbSeparator" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Строка, разделяющая базы данных на различные уровни дерева.</small></th><td><input type="text" size="25" name="NavigationTreeDbSeparator" id="NavigationTreeDbSeparator" value="_"><a class="restore-default hide" href="#NavigationTreeDbSeparator" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr></table>
+</fieldset>
+<fieldset class="optbox" id="Navi_tables">
+<legend>Таблицы</legend>
+    <p>Параметры отображения списка таблиц.</p>
+<table class="pma-table" width="100%" cellspacing="0">
+<tr><th><label for="NavigationTreeDefaultTabTable">Цель иконки быстрого доступа</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeDefaultTabTable" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span></th><td><select class="w-75" name="NavigationTreeDefaultTabTable" id="NavigationTreeDefaultTabTable"><option value="structure" selected="selected">Структура</option><option value="sql">SQL</option><option value="search">Поиск</option><option value="insert">Вставить</option><option value="browse">Обзор</option></select><a class="restore-default hide" href="#NavigationTreeDefaultTabTable" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeDefaultTabTable2">Цель второй иконки быстрого доступа</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeDefaultTabTable2" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span></th><td><select class="w-75" name="NavigationTreeDefaultTabTable2" id="NavigationTreeDefaultTabTable2"><option value="" selected="selected"></option><option value="structure">Структура</option><option value="sql">SQL</option><option value="search">Поиск</option><option value="insert">Вставить</option><option value="browse">Обзор</option></select><a class="restore-default hide" href="#NavigationTreeDefaultTabTable2" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeTableSeparator">Разделитель дерева таблиц</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeTableSeparator" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Строка, разделяющая таблицы на различные уровни дерева.</small></th><td><input type="text" size="25" name="NavigationTreeTableSeparator" id="NavigationTreeTableSeparator" value="__"><a class="restore-default hide" href="#NavigationTreeTableSeparator" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr><tr><th><label for="NavigationTreeTableLevel">Максимальная глубина дерева таблиц</label><span class="doc"><a href="./doc/html/config.html#cfg_NavigationTreeTableLevel" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span></th><td><input type="number" name="NavigationTreeTableLevel" id="NavigationTreeTableLevel" value="1"><a class="restore-default hide" href="#NavigationTreeTableLevel" title="Восстановить изначальное значение"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload"></a></td></tr></table>
+</fieldset>
+</div>
+</form>
+<script type="text/javascript">
+    if (typeof configInlineParams === 'undefined' || !Array.isArray(configInlineParams)) {
+        configInlineParams = [];
+    }
+    configInlineParams.push(function () {
+        registerFieldValidator('FirstLevelNavigationItems', 'validatePositiveNumber', true);
+registerFieldValidator('NavigationTreeDisplayItemFilterMinimum', 'validatePositiveNumber', true);
+registerFieldValidator('NumRecentTables', 'validateNonNegativeNumber', true);
+registerFieldValidator('NumFavoriteTables', 'validateNonNegativeNumber', true);
+registerFieldValidator('NavigationWidth', 'validateNonNegativeNumber', true);
+registerFieldValidator('MaxNavigationItems', 'validatePositiveNumber', true);
+registerFieldValidator('NavigationTreeTableLevel', 'validatePositiveNumber', true);
+$.extend(Messages, {
+	'error_nan_p': 'Значение должно быть положительным числом!',
+	'error_nan_nneg': 'Значение должно быть отрицательным числом!',
+	'error_incorrect_port': 'Некорректный номер порта!',
+	'error_invalid_value': 'Некорректное значение!',
+	'error_value_lte': 'Значение должно быть меньше или равно %s!'});
+$.extend(defaultValues, {
+	'ShowDatabasesNavigationAsTree': true,
+	'NavigationLinkWithMainPanel': true,
+	'NavigationDisplayLogo': true,
+	'NavigationLogoLink': 'index.php',
+	'NavigationLogoLinkWindow': ['main'],
+	'NavigationTreePointerEnable': true,
+	'FirstLevelNavigationItems': '100',
+	'NavigationTreeDisplayItemFilterMinimum': '30',
+	'NumRecentTables': '10',
+	'NumFavoriteTables': '10',
+	'NavigationWidth': '240',
+	'MaxNavigationItems': '50',
+	'NavigationTreeEnableGrouping': true,
+	'NavigationTreeEnableExpansion': true,
+	'NavigationTreeShowTables': true,
+	'NavigationTreeShowViews': true,
+	'NavigationTreeShowFunctions': true,
+	'NavigationTreeShowProcedures': true,
+	'NavigationTreeShowEvents': true,
+	'NavigationTreeAutoexpandSingleDb': true,
+	'NavigationDisplayServers': true,
+	'DisplayServersList': false,
+	'NavigationTreeDisplayDbFilterMinimum': '30',
+	'NavigationTreeDbSeparator': '_',
+	'NavigationTreeDefaultTabTable': ['structure'],
+	'NavigationTreeDefaultTabTable2': [''],
+	'NavigationTreeTableSeparator': '__',
+	'NavigationTreeTableLevel': '1'});
+    });
+    if (typeof configScriptLoaded !== 'undefined' && configInlineParams) {
+        loadInlineConfig();
+    }
+</script>
+</div></div>
+              </div>
+    </div>
 
-DROP TABLE IF EXISTS `old_roles`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `old_roles` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `display_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `roles_name_unique` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+          <div class="pma_drop_handler">
+        Перетащите файлы сюда      </div>
+      <div class="pma_sql_import_status">
+        <h2>
+          Выгрузка SQL          ( <span class="pma_import_count">0</span> )
+          <span class="close">x</span>
+          <span class="minimize">-</span>
+        </h2>
+        <div></div>
+      </div>
+      </div>
 
---
--- Dumping data for table `old_roles`
---
+  
+  
 
-LOCK TABLES `old_roles` WRITE;
-/*!40000 ALTER TABLE `old_roles` DISABLE KEYS */;
-INSERT INTO `old_roles` VALUES (1,'admin','Administrator','2022-05-28 10:17:24','2022-05-28 10:17:24');
-/*!40000 ALTER TABLE `old_roles` ENABLE KEYS */;
-UNLOCK TABLES;
+  
+      <noscript>
+      <div class="alert alert-danger" role="alert">
+  <img src="themes/dot.gif" title="" alt="" class="icon ic_s_error"> Для полноценной работы необходимо включить JavaScript!
+</div>
 
---
--- Table structure for table `order_products`
---
+    </noscript>
+  
+      <div id="floating_menubar"></div>
+<nav id="server-breadcrumb" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <img src="themes/dot.gif" title="" alt="" class="icon ic_s_host">
+      <a href="index.php?route=/" data-raw-text="127.0.0.1">
+        Сервер:        127.0.0.1
+      </a>
+    </li>
 
-DROP TABLE IF EXISTS `order_products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `order_products` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `product_id` int(11) NOT NULL,
-  `count` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+      </ol>
+</nav>
+<div id="topmenucontainer" class="menucontainer">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Toggle navigation" aria-controls="navbarNav" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul id="topmenu" class="navbar-nav">
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/server/databases">
+              <img src="themes/dot.gif" title="Базы данных" alt="Базы данных" class="icon ic_s_db">&nbsp;Базы данных
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/server/sql">
+              <img src="themes/dot.gif" title="SQL" alt="SQL" class="icon ic_b_sql">&nbsp;SQL
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/server/status">
+              <img src="themes/dot.gif" title="Состояние" alt="Состояние" class="icon ic_s_status">&nbsp;Состояние
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/server/privileges&viewing_mode=server">
+              <img src="themes/dot.gif" title="Учетные записи пользователей" alt="Учетные записи пользователей" class="icon ic_s_rights">&nbsp;Учетные записи пользователей
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/server/export">
+              <img src="themes/dot.gif" title="Экспорт" alt="Экспорт" class="icon ic_b_export">&nbsp;Экспорт
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/server/import">
+              <img src="themes/dot.gif" title="Импорт" alt="Импорт" class="icon ic_b_import">&nbsp;Импорт
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/preferences/manage">
+              <img src="themes/dot.gif" title="Настройки" alt="Настройки" class="icon ic_b_tblops">&nbsp;Настройки
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/server/replication">
+              <img src="themes/dot.gif" title="Репликация" alt="Репликация" class="icon ic_s_replication">&nbsp;Репликация
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/server/variables">
+              <img src="themes/dot.gif" title="Переменные" alt="Переменные" class="icon ic_s_vars">&nbsp;Переменные
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/server/collations">
+              <img src="themes/dot.gif" title="Кодировки" alt="Кодировки" class="icon ic_s_asci">&nbsp;Кодировки
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/server/engines">
+              <img src="themes/dot.gif" title="Типы таблиц" alt="Типы таблиц" class="icon ic_b_engine">&nbsp;Типы таблиц
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/server/plugins">
+              <img src="themes/dot.gif" title="Плагины" alt="Плагины" class="icon ic_b_plugin">&nbsp;Плагины
+                          </a>
+          </li>
+              </ul>
+    </div>
+  </nav>
+</div>
 
---
--- Dumping data for table `order_products`
---
+    <span id="page_nav_icons">
+      <span id="lock_page_icon"></span>
+      <span id="page_settings_icon">
+        <img src="themes/dot.gif" title="Настройки, касающиеся страницы" alt="Настройки, касающиеся страницы" class="icon ic_s_cog">
+      </span>
+      <a id="goto_pagetop" href="#"><img src="themes/dot.gif" title="Кликните на строку, чтобы перейти вверх страницы" alt="Кликните на строку, чтобы перейти вверх страницы" class="icon ic_s_top"></a>
+    </span>
+  
+  <div id="pma_console_container">
+    <div id="pma_console">
+                <div class="toolbar collapsed">
+                    <div class="switch_button console_switch">
+            <img src="themes/dot.gif" title="Консоль SQL запроса" alt="Консоль SQL запроса" class="icon ic_console">
+            <span>Консоль</span>
+        </div>
+                            <div class="button clear">
+            
+            <span>Очистить</span>
+        </div>
+                            <div class="button history">
+            
+            <span>История</span>
+        </div>
+                            <div class="button options">
+            
+            <span>Параметры</span>
+        </div>
+                            <div class="button bookmarks">
+            
+            <span>Закладки</span>
+        </div>
+                            <div class="button debug hide">
+            
+            <span>Отладка SQL</span>
+        </div>
+            </div>
+                <div class="content">
+            <div class="console_message_container">
+                <div class="message welcome">
+                    <span id="instructions-0">
+                        Нажмите Ctrl+Enter для выполнения запроса                    </span>
+                    <span class="hide" id="instructions-1">
+                        Нажмите Enter для выполнения запроса                    </span>
+                </div>
+                            </div><!-- console_message_container -->
+            <div class="query_input">
+                <span class="console_query_input"></span>
+            </div>
+        </div><!-- message end -->
+                <div class="mid_layer"></div>
+                <div class="card" id="debug_console">
+            <div class="toolbar ">
+                    <div class="button order order_asc">
+            
+            <span>по возрастанию</span>
+        </div>
+                            <div class="button order order_desc">
+            
+            <span>по убыванию</span>
+        </div>
+                            <div class="text">
+            
+            <span>Порядок сортировки:</span>
+        </div>
+                            <div class="switch_button">
+            
+            <span>Отладка SQL</span>
+        </div>
+                            <div class="button order_by sort_count">
+            
+            <span>Количество</span>
+        </div>
+                            <div class="button order_by sort_exec">
+            
+            <span>Порядок выполнения</span>
+        </div>
+                            <div class="button order_by sort_time">
+            
+            <span>Занято времени</span>
+        </div>
+                            <div class="text">
+            
+            <span>Сортировки по:</span>
+        </div>
+                            <div class="button group_queries">
+            
+            <span>Группировать запросы</span>
+        </div>
+                            <div class="button ungroup_queries">
+            
+            <span>Разгруппировать запросы</span>
+        </div>
+            </div>
+            <div class="content debug">
+                <div class="message welcome"></div>
+                <div class="debugLog"></div>
+            </div> <!-- Content -->
+            <div class="templates">
+                <div class="debug_query action_content">
+                    <span class="action collapse">
+            Свернуть
+                    </span>
+                            <span class="action expand">
+            Развернуть
+                    </span>
+                            <span class="action dbg_show_trace">
+            Показать трассировку
+                    </span>
+                            <span class="action dbg_hide_trace">
+            Скрыть трассировку
+                    </span>
+                            <span class="text count hide">
+            Количество
+                    </span>
+                            <span class="text time">
+            Занято времени
+                    </span>
+            </div>
+            </div> <!-- Template -->
+        </div> <!-- Debug SQL card -->
+                    <div class="card" id="pma_bookmarks">
+                <div class="toolbar ">
+                    <div class="switch_button">
+            
+            <span>Закладки</span>
+        </div>
+                            <div class="button refresh">
+            
+            <span>Обновить</span>
+        </div>
+                            <div class="button add">
+            
+            <span>Добавить</span>
+        </div>
+            </div>
+                <div class="content bookmark">
+                    <div class="message welcome">
+    <span>Нет закладок</span>
+</div>
 
-LOCK TABLES `order_products` WRITE;
-/*!40000 ALTER TABLE `order_products` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_products` ENABLE KEYS */;
-UNLOCK TABLES;
+                </div>
+                <div class="mid_layer"></div>
+                <div class="card add">
+                    <div class="toolbar ">
+                    <div class="switch_button">
+            
+            <span>Добавить закладку</span>
+        </div>
+            </div>
+                    <div class="content add_bookmark">
+                        <div class="options">
+                            <label>
+                                Метка: <input type="text" name="label">
+                            </label>
+                            <label>
+                                Целевая база данных: <input type="text" name="targetdb">
+                            </label>
+                            <label>
+                                <input type="checkbox" name="shared">Сделать закладку общедоступной                            </label>
+                            <button class="btn btn-primary" type="submit" name="submit">OK</button>
+                        </div> <!-- options -->
+                        <div class="query_input">
+                            <span class="bookmark_add_input"></span>
+                        </div>
+                    </div>
+                </div> <!-- Add bookmark card -->
+            </div> <!-- Bookmarks card -->
+                        <div class="card" id="pma_console_options">
+            <div class="toolbar ">
+                    <div class="switch_button">
+            
+            <span>Параметры</span>
+        </div>
+                            <div class="button default">
+            
+            <span>Сбросить настройки</span>
+        </div>
+            </div>
+            <div class="content">
+                <label>
+                    <input type="checkbox" name="always_expand">Всегда разворачивать сообщения запроса                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="start_history">Показать историю запросов                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="current_query">Показать текущий запрос на просмотр                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="enter_executes">
+                        Выполнить запрос по нажатию Enter и вставить новую строку по нажатию Shift + Enter. Чтобы сделать эту опцию постоянной, смотрите настройки.                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="dark_theme">Переключиться на темную тему                </label>
+                <br>
+            </div>
+        </div> <!-- Options card -->
+        <div class="templates">
+                        <div class="query_actions">
+                    <span class="action collapse">
+            Свернуть
+                    </span>
+                            <span class="action expand">
+            Развернуть
+                    </span>
+                            <span class="action requery">
+            Повторный запрос
+                    </span>
+                            <span class="action edit">
+            Изменить
+                    </span>
+                            <span class="action explain">
+            Анализировать
+                    </span>
+                            <span class="action profiling">
+            Профилирование
+                    </span>
+                            <span class="action bookmark">
+            Закладка
+                    </span>
+                            <span class="text failed">
+            Сбой выполнения запроса
+                    </span>
+                            <span class="text targetdb">
+            База данных
+                            : <span></span>
+                    </span>
+                            <span class="text query_time">
+            Запрошенное время
+                            : <span></span>
+                    </span>
+            </div>
+        </div>
+    </div> <!-- #console end -->
+</div> <!-- #console_container end -->
 
---
--- Table structure for table `orders`
---
 
-DROP TABLE IF EXISTS `orders`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `orders` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `recipient_phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `recipient_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `comment` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `delivery_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `delivery_city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `delivery_street` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `delivery_bldng` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `delivery_house` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `delivery_room` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `delivery_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payment_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `full_price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `is_paid` tinyint(1) NOT NULL,
-  `is_complite` tinyint(1) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  <div id="page_content">
+    
 
---
--- Dumping data for table `orders`
---
+    
+<!DOCTYPE HTML>
+<html lang="ru" dir="ltr">
+<head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>phpMyAdmin</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        html {
+            padding: 0;
+            margin: 0;
+        }
+        body  {
+            font-family: sans-serif;
+            font-size: small;
+            color: #000000;
+            background-color: #F5F5F5;
+            margin: 1em;
+        }
+        h1 {
+            margin: 0;
+            padding: 0.3em;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #ff0000;
+        }
+        p {
+            margin: 0;
+            padding: 0.5em;
+            border: 0.1em solid red;
+            background-color: #ffeeee;
+        }
+    </style>
+</head>
+<body>
+<h1>phpMyAdmin - Ошибка</h1>
+<p>index.php: Отсутствующий параметр: what<a href="./doc/html/faq.html#faqmissingparameters" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a><br>index.php: Отсутствующий параметр: export_type<a href="./doc/html/faq.html#faqmissingparameters" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a><br></p>
+</body>
+</html>
+  </div>
+  <div id="selflink" class="print_ignore"><a href="index.php?route=%2Fexport&amp;server=1" title="Открыть phpMyAdmin в новом окне" target="_blank" rel="noopener noreferrer"><img src="themes/dot.gif" title="Открыть phpMyAdmin в новом окне" alt="Открыть phpMyAdmin в новом окне" class="icon ic_window-new"></a></div>
 
-LOCK TABLES `orders` WRITE;
-/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
-UNLOCK TABLES;
+  <div class="clearfloat" id="pma_errors">
+    
+  </div>
 
---
--- Table structure for table `permissions`
---
+  
+<script data-cfasync="false" type="text/javascript">
+// <![CDATA[
+var debugSQLInfo = 'null';
 
-DROP TABLE IF EXISTS `permissions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `permissions` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `table_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `permissions_key_index` (`key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+// ]]>
+</script>
 
---
--- Dumping data for table `permissions`
---
 
-LOCK TABLES `permissions` WRITE;
-/*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `products`
---
-
-DROP TABLE IF EXISTS `products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `translate_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `price` decimal(8,2) NOT NULL,
-  `category_id` int(11) NOT NULL,
-  `composition` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `format_id` int(11) DEFAULT NULL,
-  `color_id` int(11) DEFAULT NULL,
-  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products`
---
-
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Капучино','kapuchino',12000.00,2,'Роза Капучино, Роза Белая, Эвкалипт, Хлопчатник (хлопок)',1,8,'compositions/kapuchino.png',NULL,NULL),(2,'Лавандовое поле','lavanda-pole',4960.00,2,'Лаванда',5,7,'compositions/lavanda-box.png',NULL,NULL),(3,'Сборный из сухоцветов','sborniiy-iz-suhocvetov',3499.00,3,'Микс из луговых сухоцветов',1,8,'dried-flowers/sborniiy-iz-suhocvetov.png',NULL,NULL),(4,'Розовые орхидеи','pink-orchds',7000.00,4,'Орхидея розовая, декоративная зелень',1,6,'bouquets/pink-orchds.png',NULL,NULL),(5,'Микс Роз','rose-mix',7999.00,5,'Роза кустовая красная, Роза Белая, Роза Кофейная',1,8,'bouquets/roses-mix.png',NULL,NULL),(6,'Синий иней','simiy-iney',9499.00,5,'Роза Синяя',1,7,'bouquets/siniy-iney.png',NULL,NULL),(7,'Дикое поле','dikoe-pole',2400.00,3,'Микс сухоцветов полевых цветов',6,8,'dried-flowers/dikoe-pole.png',NULL,NULL),(8,'Желтое поле','jeltoe-pole',3599.00,3,'Лимониум и микс полевых трав',1,2,'dried-flowers/jeltoe-pole.png',NULL,NULL),(9,'Цветами радуги','cvetami-radugi',15999.00,2,'Амариллис, Гербера, Лилия, Роза, Эвкалипт',2,8,'compositions/cvetami-radugi.png',NULL,NULL),(10,'Алые розы','alie-roses',8000.00,5,'Роза красная',1,4,'bouquets/mono-rose.png',NULL,NULL),(11,'Ультрофиолет','ultrofilet',6599.00,4,'Дендробиум синий',1,7,'bouquets/ultrofilet.png',NULL,NULL),(12,'Азалия Белая','azaliya-belaya',2499.00,6,'Азалия Белая',7,1,'houseplants/azaliya.png',NULL,NULL),(13,'Мини Орхидеи','mini-orchds',3500.00,6,'Мини орхидея желтая, Мини орхидея белая',7,8,'houseplants/mini-orchds.png',NULL,NULL),(14,'Конверт лаванды','konvert-lavanda',999.00,8,'Сухоцвет лаванда',3,7,'envelopes/lavanda-konvert.png',NULL,NULL),(15,'Белые Ночи','white-nights',4999.00,5,'Роза белая, Сирень',1,1,'bouquets/white-nights.png',NULL,NULL),(16,'Охапка гербер','ohapka-gerber',7000.00,4,'Герберы, Зелень дерокативная',1,6,'bouquets/ohapka-gerber.png',NULL,NULL),(17,'Нежность','nejnost',1700.00,10,'Искусственная композиция из экологичных материалов',5,1,'artificial/nejnost.png',NULL,NULL),(18,'Винтаж','vintage',2300.00,10,'Искусственная композиция из экологичных материалов',2,8,'artificial/vintage.png',NULL,NULL),(19,'Лайм','laim',3200.00,2,'Хризантема Желтая',1,2,'compositions/laim.png',NULL,NULL),(20,'Нова белая','new-white',10999.00,2,'Роза Белая, Хризантема Белая, Хлопок',4,1,'compositions/new-white.png',NULL,NULL),(21,'Большая корзина','bolshaya-korzina',7999.00,3,'Микс сухоцветов в корзине',4,6,'dried-flowers/bolshaya-korzina.png',NULL,NULL),(22,'Клош №5','klosh-5',1900.00,3,'Полевые сухоцветы в клоше',6,4,'dried-flowers/klosh-5.png',NULL,NULL),(23,'Луговые','lugovoe',2700.00,3,'Луговые сухоцветы',5,8,'dried-flowers/lugovie.png',NULL,NULL),(24,'Корзина с орхидеями','korzina-s-orhideyami',15599.00,4,'Микс Орхидей, Зелень декоративная',4,8,'bouquets/korzina-s-orhideyami-new.png',NULL,NULL),(25,'Кустовые розы','kustovie-rosy',3200.00,5,'Роза кустовая',1,6,'bouquets/bombastik-roses.png',NULL,NULL),(26,'Розовые сливки','roses-slivki',4500.00,5,'Роза кустовая, зелень декоративная',1,6,'bouquets/roses-pink.png',NULL,NULL),(27,'Осень 22','osen-22',8999.00,2,'Розы, Пионы',1,8,'compositions/osen_22.png',NULL,NULL),(28,'Pink Розы','pink-roses-box',15900.00,5,'Роза кустовая розовая, Декоративная зелень',5,6,'compositions/pink-roses.png',NULL,NULL),(29,'Праздник весны','prazdnik-vesny',12000.00,2,'Микс Тюльпанов',2,8,'compositions/prazdnik-vesny.png',NULL,NULL),(30,'Голубая мечта','blue-dream',2299.00,3,'Полевые сухоцветы',1,7,'dried-flowers/blue-dream.png',NULL,NULL),(31,'Интерьерные сухоцветы','interjer',2730.00,3,'Сухоцветы, хлопок',1,8,'dried-flowers/interjer.png',NULL,NULL),(32,'Деревянный конверт','envelope-wood',800.00,8,'Деревянный конверт ручной работы',NULL,NULL,'envelopes/envelope-wood.png',NULL,NULL),(33,'Конверт \"Компас\"','konvert-compas',500.00,8,'Конверт \"Компас\"',NULL,NULL,'envelopes/konvert-compas.png',NULL,NULL),(34,'Каланхое домашняя','kalanhoe',1400.00,6,'Каланхое домашняя в горшке',7,5,'houseplants/kalanhoe.png',NULL,NULL),(35,'Авторская композиция','author-artificial',3500.00,10,'Авторская композиция из искусственных цветов в вазе',2,8,'artificial/author-artificial.png',NULL,NULL),(36,'Шары черные и белые','black-and-white-balls',500.00,7,'Белые и черные шары',NULL,NULL,'holiday-balls/black-and-white.png',NULL,NULL),(37,'Каскад \"Половинки\"','kaskad-polovinki',800.00,7,'Каскад шаров \"Половинки\"',NULL,NULL,'holiday-balls/kaskad-polovinki.png',NULL,NULL),(38,'Каскад 7','kaskad-seven',800.00,7,'Каскад из 7 воздушных шаров',NULL,NULL,'holiday-balls/kaskad-seven.png',NULL,NULL),(39,'Открытка \"Лама\"','lama-postcard',300.00,9,'Открытка \"Лама\"',NULL,NULL,'postcards/lama.png',NULL,NULL),(40,'Открытка \"Мяу\"','myau-postcard',300.00,9,'Открытка \"Мяу\"',NULL,NULL,'postcards/myau.png',NULL,NULL),(41,'С новым годом','happy-new-year-pc',500.00,9,'Открытка \"С новым годом\"',NULL,NULL,'postcards/new-year.png',NULL,NULL),(42,'Сет открыток \"Сказки\"','set-skazki',900.00,9,'Сет авторских открыток',NULL,NULL,'postcards/set-skazki.png',NULL,NULL),(43,'Морское дно','morskoe-dno',1730.00,6,'Кактус с декоративными элементами',2,3,'houseplants/morskoe-dno.png',NULL,NULL),(44,'Spatifillum','spatifillum',1700.00,6,'Домашний Спатифиллюм',7,3,'houseplants/spatifilum.png',NULL,NULL),(45,'Дикий запад','wild-west',1900.00,6,'Кактус с декоративными элементами',2,8,'houseplants/wild-west.png',NULL,NULL),(46,'Интерьерная композиция','interier-comp',1500.00,10,'Интерьерная композиция из искусственных цветов',1,6,'artificial/interier-comp.png',NULL,NULL),(47,'Композиция \"Мини\"','mini-comp',1200.00,10,'Мини композиция из искусственных цветов в вазе',2,8,'artificial/mini-comp.png',NULL,NULL);
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `role_id` bigint(20) unsigned DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'users/default.png',
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `settings` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`),
-  KEY `users_role_id_foreign` (`role_id`),
-  CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `old_roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,1,'admin','ourfavoriteflowers@gmail.com','users/default.png',NULL,'$2y$10$MtEtMD9llpOjHUw52NgL/.3.1dBrko9zt415AmC0kVttmfQZDA/fa',NULL,NULL,'2022-05-28 10:17:24','2022-05-28 10:17:24'),(2,1,'main','your@email.com','users/default.png',NULL,'$2y$10$2Hl05EShypbRBWMxRsvd/eaOkrLK00zhdvVewrVKvr7tsA7.8WMhG',NULL,NULL,'2022-05-28 10:58:21','2022-05-28 10:58:21');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2022-05-28 20:17:08
+  
+  
+  </body>
+</html>

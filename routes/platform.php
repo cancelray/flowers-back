@@ -20,8 +20,8 @@ use App\Orchid\Screens\Category\CategoriesScreen;
 use App\Orchid\Screens\Formats\FormatsScreen;
 use App\Orchid\Screens\Colors\ColorsScreen;
 use App\Orchid\Screens\Orders\OrdersScreen;
+use App\Orchid\Screens\OrderProducts\OrderProductsScreen;
 use App\Orchid\Screens\CustomOrders\CustomOrdersScreen;
-
 
 
 use Illuminate\Support\Facades\Route;
@@ -124,6 +124,10 @@ Route::screen('colors', ColorsScreen::class)
 // Orders
 Route::screen('orders', OrdersScreen::class)
 ->name('platform.orders');
+
+// OrderProducts
+Route::screen('orderProducts', OrderProductsScreen::class)
+->name('platform.orderProducts');
 
 // Custom Orders
 Route::screen('custom', CustomOrdersScreen::class)

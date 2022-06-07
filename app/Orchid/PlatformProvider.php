@@ -50,6 +50,10 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.orders')
                 ->title(__('Заказы')),
 
+            Menu::make(__('Составы заказов'))
+                ->icon('module')
+                ->route('platform.orderProducts'),
+
             Menu::make(__('Кастомные заказы'))
                 ->icon('module')
                 ->route('platform.custom'),
