@@ -16,12 +16,14 @@ use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
 use App\Orchid\Screens\Products\ProductsScreen;
+use App\Orchid\Screens\Favorite\FavoritesScreen;
 use App\Orchid\Screens\Category\CategoriesScreen;
 use App\Orchid\Screens\Formats\FormatsScreen;
 use App\Orchid\Screens\Colors\ColorsScreen;
 use App\Orchid\Screens\Orders\OrdersScreen;
 use App\Orchid\Screens\OrderProducts\OrderProductsScreen;
 use App\Orchid\Screens\CustomOrders\CustomOrdersScreen;
+
 
 
 use Illuminate\Support\Facades\Route;
@@ -108,6 +110,10 @@ Route::screen('roles', RoleListScreen::class)
 // Products
 Route::screen('products', ProductsScreen::class)
     ->name('platform.products');
+
+// Favorites
+Route::screen('favorites', FavoritesScreen::class)
+    ->name('platform.favorites');
 
 // Categories
 Route::screen('categories', CategoriesScreen::class)
