@@ -80,7 +80,7 @@
                         @foreach ($favoriteProducts as $product)
                             <div class="slider-item">
                                 <a href="{{ url('/product') }}/{{ $product->translate_name }}">
-                                    <img src="{{ asset('/') }}img/catalog/{{ $product->img }}" alt="{{ $product->translate_name }}">
+                                    <img src="{{ asset('/') }}{{ $product->img }}" alt="{{ $product->translate_name }}">
                                     <h4>{{ $product->name }}</h4>
                                     <p>{{ $product->price }} &#8381</p>
                                 </a>

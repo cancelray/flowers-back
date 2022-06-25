@@ -107,16 +107,6 @@ class ProductsScreen extends Screen
                     ->title('Цвет'),
                 ]),
                 Cropper::make('img')->targetRelativeUrl()->title('Фото товара'),
-                // Upload::make('image')
-                // ->groups('photo')
-                // ->title('Фото товара'),
-                // Input::make('img')
-                // ->placeholder(function ()
-                //     {
-                //         $image = attachment()->first();
-                //         return $image->url();
-                //     })
-                // ->title('Адресс фото товара'),
                 Group::make([
                     DateTimer::make('created_at')->title('Создан'),
                     DateTimer::make('updated_at')->title('Изменен'),

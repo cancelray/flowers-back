@@ -86,7 +86,7 @@
                         @foreach ($products as $product)
                             <div class="catalog-item">
                                 <a href="{{ url('/product') }}/{{ $product->translate_name }}">
-                                    <img src="{{ asset('/') }}img/catalog/{{ $product->img }}" alt="{{ $product->translate_name }}">
+                                    <img src="{{ asset('/') }}{{ $product->img }}" alt="{{ $product->translate_name }}">
                                     <h4>{{ $product->name }}</h4>
                                     <h4 class="price">{{ $product->price }} &#8381</h4>
                                 </a>
@@ -102,3 +102,5 @@
     </section>
 
 @endsection
+
+{{-- img/catalog/ --}}

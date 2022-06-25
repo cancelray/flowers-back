@@ -13,7 +13,7 @@
         <div class="container">
             <h6><a href="{{ url('/') }}">Главная</a>&nbsp;/ {{ $product->name }}</h6>
             <div class="card">
-                <img src="{{ asset('/') }}img/catalog/{{ $product->img }}" alt="{{ $product->translate_name}}" class="product-img">
+                <img src="{{ asset('/') }}{{ $product->img }}" alt="{{ $product->translate_name}}" class="product-img">
                 <div class="product-info">
                     <h3>{{ $product->name }}</h3>
                     <h5 class="price">{{ $product->price }} &#8381</h5>
@@ -88,7 +88,7 @@
                             @foreach ($favoriteProducts as $product)
                                 <div class="slider-item">
                                     <a href="{{ url('/product') }}/{{ $product->translate_name }}">
-                                        <img src="{{ asset('/') }}img/catalog/{{ $product->img }}" alt="{{ $product->translate_name }}" class="slider-img">
+                                        <img src="{{ asset('/') }}{{ $product->img }}" alt="{{ $product->translate_name }}" class="slider-img">
                                         <h4>{{ $product->name }}</h4>
                                         <p>{{ $product->price }} &#8381</p>
                                     </a>

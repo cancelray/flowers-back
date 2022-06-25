@@ -72,7 +72,7 @@ class ProductsTable extends Table
                 TD::make('img', 'Картинка')
                     ->render(function (Product $product)
                     {
-                       $productImg = "<img src=/public/img/catalog/".$product->img." width=100px>";
+                       $productImg = "<img src=/public/".$product->img." width=100px>";
 
                         return $productImg;
                     })
