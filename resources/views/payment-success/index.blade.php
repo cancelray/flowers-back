@@ -11,7 +11,6 @@
             <h2 class="payment">Оплата прошла</h2>
             <h2 class="success">успешно!</h2>
             <div class="payment-success-wrapper">
-                <p class="number">Ваш номер заказа – 111111111</p>
                 <p>Спасибо за заказ!</p>
                 <p>Вы получите уведомление о статусе вашего заказа</p>
                 <a href="{{ url('/') }}">на главную</a>

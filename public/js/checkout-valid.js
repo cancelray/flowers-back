@@ -31,10 +31,9 @@ const checkoutSubmit = async function(event) {
         body: orderInfoJson
     });
     if (response.ok) {
+        cartClear();
         removeCheckoutLoader();
-        checkoutForm.reset();
-        const success = 'Ваша заявка принята';
-        showCheckoutPopup(success);
+        document.location.href = '/payment-success';
     } else {
         removeCheckoutLoader();
         const fail = 'Произошла ошибка сервера. Попробуйте ещё раз'
@@ -198,6 +197,13 @@ const showCheckoutPopup = (text) => {
 const closeCheckoutPopup = () => {
     checkoutPopup.classList.remove('show-checkout-popup');
     checkoutContainer.classList.remove('low-opacity');
+}
+
+const cartClear = () => {
+    let request = new XMLHttpRequest;
+    const url = "/cart/clear";
+    request.open("GET", url);
+    request.send();
 }
 
 const checkoutForm = document.getElementById('checkout-form');

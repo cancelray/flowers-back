@@ -32,6 +32,7 @@ Route::get('/cart/remove/{id}', [App\Http\Controllers\CartController::class, 're
 Route::get('/cart/decrement/{id}', [App\Http\Controllers\CartController::class, 'decrement']);
 Route::get('/cart/increment/{id}', [App\Http\Controllers\CartController::class, 'increment']);
 Route::get('/cart/show/', [App\Http\Controllers\CartController::class, 'getProducts']);
+Route::get('/cart/clear/', [App\Http\Controllers\CartController::class, 'clear']);
 
 Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index']);
 Route::post('/cartCheckout', [App\Http\Controllers\CartController::class, 'cartCheckout']);

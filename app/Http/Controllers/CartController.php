@@ -58,6 +58,17 @@ class CartController extends Controller
         $this->addToCart($id);
     }
 
+    public function clear() 
+    {
+        $cart = $this->getCartFromSession();
+
+        foreach($cart as $id => $product) {
+            unset($cart[$id]);
+        }
+
+        session()->put('cart', $cart);
+    }
+
     public function cartCheckout(Request $request) 
     {
         $freeDeliveryThreshold = 2500;
