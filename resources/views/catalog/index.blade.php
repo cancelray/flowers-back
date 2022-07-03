@@ -3,10 +3,10 @@
 @section('page-title', 'Our Favorite Flowers - Catalog')
 
 @section('add-scripts')
-    <script defer src="{{ asset('/js/add-to-cart.js') }}"></script>
+    <script defer src="{{ asset('/js/add-to-cart.min.js') }}"></script>
     <script defer src="{{ asset('/js/catalog.min.js') }}"></script>
-    <script defer src="{{ asset('/js/filter.js') }}"></script>
-    <script defer src="{{ asset('/js/section-change.js') }}"></script>
+    <script defer src="{{ asset('/js/filter.min.js') }}"></script>
+    <script defer src="{{ asset('/js/section-change.min.js') }}"></script>
 @endsection
 
 

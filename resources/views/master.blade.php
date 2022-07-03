@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
         <link rel="icon" type="image/x-icon" href="{{ asset('img/flower-bouquet.png') }}"/>
         <title>@yield('page-title')</title>
-        <meta name="description" content="template">
+        <meta name="description" content="ourflowers">
         <link href="{{ asset('style/css/index.min.css') }}" rel="stylesheet" type="text/css">
-        <script defer src="{{ asset('js/cart.js') }}"></script>
+        <script defer src="{{ asset('js/cart.min.js') }}"></script>
 		<script defer src="{{ asset('js/cart-show.min.js') }}"></script>
         <script defer src="{{ asset('js/burger.min.js') }}"></script>
         @yield('add-scripts')

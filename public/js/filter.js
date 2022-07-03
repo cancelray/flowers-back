@@ -139,7 +139,7 @@ const productCreate = (product, productsWrapper) => {
     productLink.href = '/product/' + product['translate_name'];
 
     const productImg = document.createElement('img');
-    productImg.src = '/img/catalog/' + product['img'];
+    productImg.src = '/' + product['img'];
     productImg.alt = product['translate_name'];
     productLink.appendChild(productImg);
 

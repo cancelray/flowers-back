@@ -4,7 +4,7 @@
 
 @section('add-scripts')
     <script defer src="{{ asset('/js/delivery-show.min.js') }}"></script>
-    <script defer src="{{ asset('/js/checkout-valid.js') }}"></script>
+    <script defer src="{{ asset('/js/checkout-valid.min.js') }}"></script>
 @endsection
 
 @section('main-content')

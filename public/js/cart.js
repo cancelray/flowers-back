@@ -97,7 +97,7 @@ async function getCart() {
         cartItem.classList.add('cart-item');
 
         const cartItemImg = document.createElement('img');
-        cartItemImg.src = '/public/' + productsJson[i]['img'];
+        cartItemImg.src = '/' + productsJson[i]['img'];
         cartItemImg.alt = productsJson[i]['translate_name'];
         cartItem.appendChild(cartItemImg);
 
@@ -162,7 +162,7 @@ async function getCart() {
             orderItem.classList.add('order-item');
     
             const orderItemImg = document.createElement('img');
-            orderItemImg.src = '/public/' + productsJson[i]['img'];
+            orderItemImg.src = '/' + productsJson[i]['img'];
             orderItemImg.alt = productsJson[i]['translate_name'];
             orderItem.appendChild(orderItemImg);
     

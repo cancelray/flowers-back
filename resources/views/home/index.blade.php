@@ -5,7 +5,7 @@
 @section('add-scripts')
     <script defer src="{{ asset('js/slider.min.js') }}"></script>
     <script defer src="{{ asset('/js/add-to-cart.min.js') }}"></script>
-    <script defer src="{{ asset('/js/custom-form-valid.js') }}"></script>
+    <script defer src="{{ asset('/js/custom-form-valid.min.js') }}"></script>
 @endsection
 
 
